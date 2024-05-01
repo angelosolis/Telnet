@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TelnetDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="userCredentials">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="userRoles" Relationship="TelnetDBModel.FK_userRoles_userRoles" FromRole="userCredentials" ToRole="userRoles" />
+  </EntityType>
+  <EntityContainer Name="TelnetDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="userCredentials" EntityType="Self.userCredentials" />
+    <EntitySet Name="roles" EntityType="TelnetDBModel.roles" />
+    <EntitySet Name="userRoles" EntityType="TelnetDBModel.userRoles" />
+    <AssociationSet Name="FK_userRoles_roles" Association="TelnetDBModel.FK_userRoles_roles">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="userRoles" EntitySet="userRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userRoles_userRoles" Association="TelnetDBModel.FK_userRoles_userRoles">
+      <End Role="userCredentials" EntitySet="userCredentials" />
+      <End Role="userRoles" EntitySet="userRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="userRoles" Relationship="TelnetDBModel.FK_userRoles_roles" FromRole="roles" ToRole="userRoles" />
+  </EntityType>
+  <EntityType Name="userRoles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="roleId" Type="Int32" />
+    <NavigationProperty Name="roles" Relationship="TelnetDBModel.FK_userRoles_roles" FromRole="userRoles" ToRole="roles" />
+    <NavigationProperty Name="userCredentials" Relationship="TelnetDBModel.FK_userRoles_userRoles" FromRole="userRoles" ToRole="userCredentials" />
+  </EntityType>
+  <Association Name="FK_userRoles_roles">
+    <End Type="TelnetDBModel.roles" Role="roles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TelnetDBModel.userRoles" Role="userRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userRoles">
+        <PropertyRef Name="roleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userRoles_userRoles">
+    <End Type="TelnetDBModel.userCredentials" Role="userCredentials" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TelnetDBModel.userRoles" Role="userRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userCredentials">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="userRoles">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
