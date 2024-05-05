@@ -13,9 +13,10 @@ using System.Web.Security;
 
 namespace TelNet.Controllers
 {
+    [OutputCache(NoStore = true, Duration = 0)]
     public class LoginController : BaseController
     {
-        [AllowAnonymous] //
+        [AllowAnonymous] 
         public ActionResult Login()
         {
             return View();
@@ -25,39 +26,55 @@ namespace TelNet.Controllers
         [HttpPost]
         public ActionResult Login(userCredentials u)
         {
-
-            if (string.IsNullOrEmpty(u.username) || string.IsNullOrEmpty(u.password))
+            
+            if (string.IsNullOrEmpty(u.username) || string.IsNullOrEmpty(u.eid) || string.IsNullOrEmpty(u.password))
             {
-                ModelState.AddModelError("", "Please input username and password");
+                TempData["ErrorMessage"] = "Please input username, EID, and password";
                 return View(u);
             }
 
-            // Check if the user exists in userRepo
-            var user = _userRepo.Table.FirstOrDefault(m => m.username == u.username);
+            // Check if the user exists in userCredentials table based on both username and EID
+            var user = _userRepo.Table.FirstOrDefault(m => m.username == u.username && m.eid == u.eid);
             if (user != null)
             {
-                // Verify the password
                 if (user.password == u.password)
                 {
-                        // Set authentication cookie
-                        FormsAuthentication.SetAuthCookie(u.username, false);
+                    FormsAuthentication.SetAuthCookie(u.username, false);
 
-                        // Store user ID in session
-                        Session["UserId"] = user.userId;
+                    var userRoles = (from ur in _db.userRoles
+                                     join r in _db.roles on ur.roleId equals r.id
+                                     where ur.userId == user.userId
+                                     select r.roleName).ToList();
+                    
+                    Session["CurrentlyLoggedIn"] = user.username;
 
-                        return RedirectToAction("Index", "Home");
+                    if(userRoles.Contains("CEO"))
+                    {
+                        return RedirectToAction("Dashboard", "Home");
+                    }
+                    else
+                    { 
+                        return RedirectToAction("CRM", "Home"); 
+                    }
+                    
                 }
                 else
                 {
-                    ModelState.AddModelError("", "User's status information not found");
+                    TempData["ErrorMessage"] = "Incorrect password";
                 }
             }
             else
             {
-                ModelState.AddModelError("", "Incorrect password");
+                TempData["ErrorMessage"] = "User not found";
             }
-            return View(u);
 
+            return View(u);
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Login");
         }
     }
 }

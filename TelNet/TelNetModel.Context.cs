@@ -25,8 +25,12 @@ namespace TelNet
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<userCredentials> userCredentials { get; set; }
+        public virtual DbSet<customerAccounts> customerAccounts { get; set; }
+        public virtual DbSet<notificationLogs> notificationLogs { get; set; }
         public virtual DbSet<roles> roles { get; set; }
+        public virtual DbSet<userApplications> userApplications { get; set; }
+        public virtual DbSet<userCredentials> userCredentials { get; set; }
         public virtual DbSet<userRoles> userRoles { get; set; }
+        public virtual DbSet<vw_UserRole> vw_UserRole { get; set; }
     }
 }

@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+
+
+@media (max-width: 991px) {
+
+	#right {
+		padding: 50px;
+	}
+
+	#login {
+		margin: 0px;
+		margin-top: 75px;
+		margin-bottom: 75px;
+	}
+
+	#username, #password {
+		width: 80%;
+		margin: auto;
+	}
+
+	button {
+		width: 70%;
+	}
+
+	h1 {
+		margin-top: -20px !important;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+
+	#right {
+		padding: 50px;
+	}
+
+	#login {
+		margin: 0px;
+		margin-top: 75px;
+		margin-bottom: 75px;
+	}
+
+	#username, #password {
+		width: 80%;
+		margin: auto;
+	}
+
+	button {
+		width: 70%;
+	}
+
+	h1 {
+		margin-top: -20px !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	body {
+		margin: 0;
+		padding: 0;
+		height: 100vh; /* Ensure full height */
+		background: linear-gradient(to right, black 40%, white 0%); /* Gradient for half black and half white */
+	}
+
+	#left {
+		margin-top: 10px;
+		height: 480px;
+	}
+
+	#right {
+		height: 500px;
+	}
+
+	#login {
+		margin: 0px;
+		margin-top: 15vh;
+		margin-bottom: 100px;
+	}
+
+	i {
+		margin-top: 200px;
+	}
+
+	#username, #password {
+		width: 80%;
+		margin: auto;
+	}
+
+	button {
+		width: 60%;
+	}
+
+	h1 {
+		margin-top: 30px !important;
+	}
+}
+
+body {
+	marign: 0px;
+	padding: 0px;
+	background-color: white;
+}
+
+.container-fluid {
+	marign: 0px;
+	padding: 0px;
+}
+
+.row {
+	marign: 0px;
+	padding: 0px;
+}
+
+#left {
+	background-color: #000000;
+}
+
+#right {
+	border: px solid black;
+	border-radius: 20px;
+}
+
+i {
+	margin: 0xp;
+	padding: 0px;
+	font-size: 1.75em;
+	color: #fff;
+}
+
+h1 {
+	margin: 0xp;
+	padding: 0px;
+	margin-bottom: 20px;
+	color: #3A3331;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	font-size: 2.25em;
+}
+
+h2 {
+	margin: 0xp;
+	padding: 0px;
+	margin-top: 0px !important;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 2.25em;
+}
+
+h4 {
+	margin-top: 0px !important;
+	font-family: 'Open Sans', sans-serif;
+	font-size: .9em;
+	color: #35150C;
+	font-weight: 300;
+}
+
+#username span, #password span, button {
+	display: block;
+}
+
+#username input, #password input {
+	width: 100%;
+}
+
+button {
+	margin: auto;
+}
+
+#username span, #password span {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	padding: 5px;
+	margin-top: 20px;
+}
+
+#username input, #password input {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	padding: 12px;
+	border-radius: 0px;
+	border: none;
+	border-bottom: 3px solid #D8D8D8;
+	font-size: 1.25em;
+}
+
+	#username input:focus, #password input:focus {
+		outline: none;
+		color: #E55934;
+		border-bottom: 3px solid #E55934;
+	}
+
+button {
+	padding: 10px;
+	margin-top: 50px;
+	background-color: #fff;
+	border: none;
+	border: 2px solid #E55934;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 5px;
+	color: #C14C2C;
+}
+
+	button:hover {
+		color: #fff;
+		background-color: #E55934;
+		border: 2px solid #C14C2C;
+		border-radius: 5px;
+	}
+
+	button:focus {
+		outline: none;
+	}
+
+#acct {
+	margin-top: 30px;
+	color: #C14C2C;
+}
+
+#signup-button {
+	color: #fff;
+	background-color: #E55934;
+	border: 2px solid #C14C2C;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+	#signup-button:hover {
+		color: #E55934;
+		background-color: #fff;
+		border: 2px solid #E55934;
+		border-radius: 5px;
+	}

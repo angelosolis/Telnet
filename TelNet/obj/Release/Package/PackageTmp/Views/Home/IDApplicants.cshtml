@@ -1,0 +1,325 @@
+﻿﻿@{
+    ViewBag.Title = "ID Applicants";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+        TeleX - ID Applicants
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Nucleo Icons -->
+    <link href="~/Content/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/Content/assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/LoginCSS/images/icons/background2.ico" />
+    <style>
+        #myTable_length, #myTable_info
+        {
+            padding-left: 25px;
+        }
+    </style>
+
+</head>
+
+<body class="g-sidenav-show" style="background-color: #FFFF">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <!--   Core JS Files   -->
+    <script src="~/Content/assets/js/core/popper.min.js"></script>
+    <script src="~/Content/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/plugins/chartjs.min.js"></script>
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main" style="background-color: #CD6200E8">
+        <div class="sidenav-header">
+            <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+                <span class="ms-1 font-weight-bold text-white" style="font-size: 18px; font-weight: bold; text-align: center">ㅤCustomer Relationship<br />ㅤㅤㅤManagement</span>
+                <br />
+                <span class="ms-1 font-weight-bold text-white" style="font-size: 12px;"></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("CRM","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">view_kanban</i>
+                        </div>
+                        <span class="nav-link-text ms-1">CRM</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="@Url.Action("Notifications","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">edit_calendar</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white active bg-gradient-primary" href="@Url.Action("IDApplicants","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">bar_chart</i>
+                        </div>
+                        <span class="nav-link-text ms-1">ID Applicants</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="./pages/virtual-reality.html">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">groups</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Customer Capture Information</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("DataAnalysis","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">content_paste</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Data Analysis</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="./pages/notifications.html">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">rate_review</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </aside>
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+            <div class="container-fluid py-1 px-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Home</a></li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Customer Relationship Management</li>
+                    </ol>
+                    <h6 class="font-weight-bolder mb-0">Business Overview</h6>
+                </nav>
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                        <div class="input-group input-group-outline">
+                            <label class="form-label"></label>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav  justify-content-end">
+                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                                <div class="sidenav-toggler-inner">
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- End Navbar -->
+        <div class="container mb-4 container-round">
+            <h2 style="padding-left:25px">
+                Applicants
+            </h2>
+            <table id="myTable" class="table table-hover table-responsive " style="padding-left:25px">
+                <thead>
+                    <tr style="text-align:center">
+                        <th>Application Number</th>
+                        <th>Full Name</th>
+                        <th>Status</th>
+                        <th>Reason</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var userApplication in Model)
+                    {
+                        if (userApplication.status != null)
+                        {
+                            <tr style="text-align:center">
+                                <td>@userApplication.applicationNumber</td>
+                                <td>@userApplication.fullName</td>
+                                <td>@userApplication.status</td>
+                                <td>@userApplication.denialReason</td>
+                                <td>
+                                    <!-- Pass the application ID as a data attribute -->
+                                    <button class="btn btn-success btn-sm" id="view-application-btn" data-application-id="@userApplication.applicationId">View Application</button>
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal for viewing application details -->
+        <div class="modal fade" id="viewApplicationModal" tabindex="-1" role="dialog" aria-labelledby="viewApplicationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewApplicationModalLabel">Application Details</h5>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close" id="modalClose">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="viewApplicationSection">
+                        <!-- Application details go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        $(function () {
+            $('#modalClose').on('click', function () {
+                $('#viewApplicationModal').modal('hide');
+                $('#applicationModal').modal('hide');
+            })
+        })
+
+    </script>
+
+    <script>
+        // Add event listener to the table, listening for clicks on buttons with class 'view-application-btn'
+        document.querySelector('table').addEventListener('click', function (event) {
+            if (event.target.id === 'view-application-btn') {
+
+                // Get the application ID from the data attribute of the clicked button
+                var applicationId = event.target.dataset.applicationId;
+
+                // Send an AJAX request to retrieve the application details from the server
+                fetch(`/Home/GetApplicationDetails?applicationId=${applicationId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Convert the birthdate from milliseconds to a Date object if it's not null or undefined
+                        var formattedBirthdate = data.birthdate ? new Date(parseInt(data.birthdate.substr(6))) : '';
+
+                        // If birthdate is not null or undefined, adjust and format it
+                        if (formattedBirthdate) {
+                            // Adjust the date to display the correct local date
+                            var adjustedBirthdate = new Date(formattedBirthdate.getTime() + formattedBirthdate.getTimezoneOffset() * 60000);
+
+                            // Add one day to the adjusted birthdate
+                            adjustedBirthdate.setDate(adjustedBirthdate.getDate() + 1);
+
+                            // Format the date as desired (e.g., YYYY-MM-DD)
+                            formattedBirthdate = adjustedBirthdate.toISOString().split('T')[0];
+                        }
+
+
+                        var modalContent = `
+             <div class="row">
+  <div class="col-md-6">
+ <h4>Applicant's ID </h4>
+ </div>
+ <img src="${data.image}" style="width: 400px; height: 200px; padding-left: 100px; padding-bottom: 20px" />
+
+ <hr>
+     <div class="col-md-6">
+         <h4> Personal Details </h4>
+         <hr>
+         <p><strong>Full Name:</strong> ${data.fullName || ''}</p>
+         <p><strong>Mother's Maiden Name:</strong> ${data.mothersMaidenName || ''}</p>
+         <p><strong>Birthdate:</strong> ${formattedBirthdate || ''}</p>
+         <p><strong>Type of ID:</strong> ${data.typeOfId || ''}</p>
+         <p><strong>ID Number:</strong> ${data.idNumber || ''}</p>
+         <p><strong>Gender:</strong> ${data.gender || ''}</p>
+         <p><strong>Civil Status:</strong> ${data.civilStatus || ''}</p>
+         <p><strong>Citizenship:</strong> ${data.citizenship || ''}</p>
+         <p><strong>Home Ownership:</strong> ${data.homeOwnership || ''}</p>
+         <p><strong>Home Address:</strong> ${data.homeAddress || ''}</p>
+         <p><strong>Plan: </strong> ${data.plans || ''}</p>
+         <p><strong>Payment Method: </strong> ${data.modeOfPayment || ''}</p>
+     </div>
+     <div class="col-md-6">
+         <h4> Work Details </h4>
+         <hr>
+         <p><strong>Employment Status:</strong> ${data.employmentStatus || ''}</p>
+         <p><strong>Total Household Income:</strong> ${data.totalHouseholdIncome || ''}</p>
+         <p><strong>Occupation:</strong> ${data.occupation || ''}</p>
+         <p><strong>Occupation Rank:</strong> ${data.occupationRank || ''}</p>
+         <p><strong>Business Name:</strong> ${data.businessName || ''}</p>
+         <p><strong>Business Address:</strong> ${data.businessAddress || ''}</p>
+         <p><strong>Office Telephone:</strong> ${data.officeTelephone || ''}</p>
+     </div>
+ </div>
+        `;
+
+                        // Update the modal body with the populated content
+                        document.querySelector('#viewApplicationModal .modal-body').innerHTML = modalContent;
+
+                        // Open the modal
+                        $('#viewApplicationModal').modal('show');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        });
+    </script>
+
+    <script>
+        // JavaScript to show/hide other ID input field based on selection
+        document.addEventListener("DOMContentLoaded", function () {
+            var typeOfIdSelect = document.getElementById("typeOfId");
+            var otherIdInput = document.getElementById("otherIdInput");
+
+            typeOfIdSelect.addEventListener("change", function () {
+                if (typeOfIdSelect.value === "Other") {
+                    otherIdInput.style.display = "block";
+                } else {
+                    otherIdInput.style.display = "none";
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="~/Content/assets/js/material-dashboard.min.js?v=3.0.0"></script>
+</body>
+
+</html>

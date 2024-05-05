@@ -1,0 +1,1015 @@
+﻿﻿@{
+    ViewBag.Title = "CRM";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+        TeleX - Customer Relationship Management
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Nucleo Icons -->
+    <link href="~/Content/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/Content/assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="icon" type="image/png" href="~/Content/LoginCSS/images/icons/background2.ico" />
+    <style>
+        #myTable_length,#myTable_info
+        {
+            display:none;
+        }
+    </style>
+
+
+
+</head>
+
+<body class="g-sidenav-show" style="background-color: #FFFF">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   Core JS Files   -->
+    <script src="~/Content/assets/js/core/popper.min.js"></script>
+    <script src="~/Content/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/plugins/chartjs.min.js"></script>
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main" style="background-color: #CD6200E8">
+        <div class="sidenav-header">
+            <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+                <span class="ms-1 font-weight-bold text-white" style="font-size: 18px; font-weight: bold; text-align: center">ㅤCustomer Relationship<br />ㅤㅤㅤManagement</span>
+                <br />
+                <span class="ms-1 font-weight-bold text-white" style="font-size: 12px;"></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white active bg-gradient-primary" href="@Url.Action("CRM","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">view_kanban</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Customer Registration</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="@Url.Action("Notifications","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">edit_calendar</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="@Url.Action("CustomerCaptureInformation","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">groups</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Customer Capture Information</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("RegisteredCustomers","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">how_to_reg</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Registered Customers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("DataAnalysis","Home")">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">content_paste</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Data Analysis</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+            <div class="container-fluid py-1 px-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="@Url.Action("Dashboard","Home")">Home</a></li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Customer Relationship Management</li>
+                    </ol>
+                    <h6 class="font-weight-bolder mb-0">Customer Registration</h6>
+                </nav>
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="ms-md-auto pe-md-3 d-flex">
+                        <div class="input-group input-group-outline">
+                            <label class="form-label"></label>
+
+                            <a href="@Url.Action("Logout","Login")" style="margin-top:5px; margin-left: 10px">Logout</a>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav  justify-content-end">
+                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                                <div class="sidenav-toggler-inner">
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="modal" id="applicationModal" tabindex="-1" role="dialog" aria-labelledby="applicationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applicationModalLabel">Application Form</h5>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="applicationForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset id="personalInfo">
+                                        <legend>Personal Information</legend>
+                                        <div class="form-group">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mothersMaidenName">Mother's Maiden Name</label>
+                                            <input type="text" class="form-control" id="mothersMaidenName" name="mothersMaidenName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="text" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="birthdate">Birthdate</label>
+                                            <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="typeOfId">Type of ID</label>
+                                            <select class="form-control" id="typeOfId" name="typeOfId" required>
+                                                <option value="SSS">Social Security System (SSS)</option>
+                                                <option value="GSIS">Government Service Insurance System (GSIS)</option>
+                                                <option value="UMID">Unified Multi-Purpose ID (UMID)</option>
+                                                <option value="TIN">Tax Identification Number (TIN)</option>
+                                                <option value="PhilHealth">Philippine Health Insurance Corporation (PhilHealth)</option>
+                                                <option value="Passport">Passport</option>
+                                                <option value="DriverLicense">Driver's License</option>
+                                                <option value="PRC">Professional Regulation Commission (PRC) ID</option>
+                                                <option value="VoterID">Voter's ID</option>
+                                                <option value="PostalID">Postal ID</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div id="otherIdInput" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="otherId">Specify Other ID</label>
+                                                <input type="text" class="form-control" id="otherId" name="otherId" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="idImage">Upload ID Image (JPEG, PNG)</label>
+                                            <input type="file" class="form-control" id="idImage" name="idImage" accept="image/jpeg, image/png" required>
+                                            <small class="form-text text-muted">Please upload an image file (JPEG, PNG).</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Gender</label><br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                                                <label class="form-check-label" for="male">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required>
+                                                <label class="form-check-label" for="female">Female</label>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset id="additionalInformation">
+                                        <legend><br/></legend>
+                                        <div class="form-group">
+                                            <label for="civilStatus">Civil Status</label>
+                                            <input type="text" class="form-control" id="civilStatus" name="civilStatus" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="citizenship">Citizenship</label>
+                                            <select class="form-select" id="citizenship" name="citizenship" required>
+                                                <option value="PH">Philippines</option>
+                                                <option value="US">United States</option>
+                                                <option value="CA">Canada</option>
+                                                <option value="UK">United Kingdom</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="homeOwnership">Home Ownership</label>
+                                            <input type="text" class="form-control" id="homeOwnership" name="homeOwnership" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="homeAddress">Home Address</label>
+                                            <input type="text" class="form-control" id="homeAddress" name="homeAddress" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="plans">Plans</label>
+                                            <select class="form-select" id="plans" name="plans" required>
+                                                <optgroup label="Plan for Home/Business">
+                                                    <option value="FiberX Plan 200Mbps">FiberX Plan 200Mbps - 1500 PHP</option>
+                                                    <option value="FiberX Plan 400Mbps">FiberX Plan 400Mbps - 2000 PHP</option>
+                                                    <option value="FiberX Plan 600mbps">FiberX Plan 600mbps - 2500 PHP</option>
+                                                    <option value="FiberX Plan 800mbps">FiberX Plan 800mbps - 3500 PHP</option>
+                                                    <option value="FiberX Plan 1Gbps">FiberX Plan 1Gbps - 7499 PHP</option>
+                                                </optgroup>
+                                                <optgroup label="Plan for Work">
+                                                    <option value="FiberX Plan 400mbps Morning / 200mbps Night">FiberX Plan 400mbps Morning / 200mbps Night - 1699 PHP </option>
+                                                    <option value="FiberX Plan 400mbps Night   / 200mbps Morning">FiberX Plan 400mbps Night   / 200mbps Morning - 1699 PHP</option>
+                                                    <option value="FiberX Plan 800mbps Morning / 600mbps Night">FiberX Plan 800mbps Morning / 600mbps Night - 3000 PHP</option>
+                                                    <option value="FiberX Plan 800mbps Night   / 600mbps Morning">FiberX Plan 800mbps Night   / 600mbps Morning - 3000 PHP</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="modeOfPayment">Payment Methods</label>
+                                            <select class="form-select" id="modeOfPayment" name="modeOfPayment" required>
+                                                <optgroup label="Walk In">
+                                                    <option value="over-the-counter">Over-The-Counter</option>
+                                                </optgroup>
+                                                <optgroup label="Payment Centers">
+                                                    <option value="Palawan">Palawan Payment Center</option>
+                                                    <option value="Mhuillier">Mhuillier Payment Center</option>
+                                                </optgroup>
+                                                <optgroup label="E-Wallet">
+                                                    <option value="GCash">GCash</option>
+                                                    <option value="Maya">Maya</option>
+                                                </optgroup>
+                                                <optgroup label="Credit/Debit Card">
+                                                    <option value="VISA">VISA</option>
+                                                    <option value="MasterCard">MasterCard</option>
+                                                </optgroup>
+                                                <optgroup label="Online Banking">
+                                                    <option value="Unionbank">Unionbank Internet Banking</option>
+                                                    <option value="RCBC">RCBC Online Banking</option>
+                                                    <option value="BDO">BDO</option>
+                                                    <option value="BPI">BPI</option>
+                                                    <option value="Metrobank">Metrobank Direct</option>
+                                                    <option value="Landbank">Landbank ATM Online</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <fieldset id="employmentInfo" style="display: none;">
+                                    <legend>Employment Information</legend>
+                                    <div class="form-group">
+                                        <label for="employmentStatus">Employment Status</label>
+                                        <select class="form-control" id="employmentStatus" name="employmentStatus" required>
+                                            <option value="Employed">Employed</option>
+                                            <option value="Unemployed">Unemployed</option>
+                                            <option value="Self-employed">Self-employed</option>
+                                            <option value="Student">Student</option>
+                                            <option value="Retired">Retired</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="totalHouseholdIncome">Total Household Income (PHP)</label>
+                                        <select class="form-select" id="totalHouseholdIncome" name="totalHouseholdIncome" required>
+                                            <option value="0">Below PHP 10,000</option>
+                                            <option value="10000">PHP 10,000 - PHP 30,000</option>
+                                            <option value="30000">PHP 30,000 - PHP 100,000</option>
+                                            <option value="100000">Above PHP 100,000</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="occupation">Occupation</label>
+                                        <input type="text" class="form-control" id="occupation" name="occupation" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="occupationRank">Position/Rank/Level</label>
+                                        <input type="text" class="form-control" id="occupationRank" name="occupationRank" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="businessName">Employer's/Business Name</label>
+                                        <input type="text" class="form-control" id="businessName" name="businessName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="businessAddress">Employer's/Business Address</label>
+                                        <input type="text" class="form-control" id="businessAddress" name="businessAddress" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="officeTelephone">Office Telephone Number</label>
+                                        <input type="tel" class="form-control" id="officeTelephone" name="officeTelephone" required>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="backButton">Back</button>
+                        <button type="button" class="btn btn-primary" id="nextButton">Next</button>
+                        <button type="button" class="btn btn-primary" id="submitButton" style="display: none;">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- End Navbar -->
+        <div class="container mb-4 container-round">
+            <h2 style="padding-left:25px">
+                New Applicants - <button type="button" style="border-radius: 30px" data-toggle="modal" data-target="#applicationModal">Create Application</button>
+            </h2>
+            <table id="myTable" class="table table-hover table-responsive ">
+                <thead>
+                    <tr style="text-align:center">
+                        <th>Application Number</th>
+                        <th>Full Name</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var userApplication in Model)
+                    {
+                        if (userApplication.status == null)
+                        {
+                            <tr style="text-align:center">
+                                <td>@userApplication.applicationNumber</td>
+                                <td>@userApplication.fullName</td>
+                                <td>@userApplication.status</td>
+                                <td>
+                                    <!-- Pass the application ID as a data attribute -->
+                                    <button class="btn btn-success btn-sm" id="view-application-btn" data-application-id="@userApplication.applicationId">View Application</button>
+                                    <button class="btn btn-primary btn-sm" id="approve-application-btn" data-application-id="@userApplication.applicationId">Approve</button>
+                                    <button class="btn btn-danger btn-sm deny-application-btn" data-application-id="@userApplication.applicationId">Deny</button>
+                                    <button class="btn btn-danger btn-sm delete-application-btn" data-application-id="@userApplication.applicationId">Delete</button>
+                                    <!-- Denial Reason Modal -->
+                                    <div class="modal fade" id="denialReasonModal" tabindex="-1" role="dialog" aria-labelledby="denialReasonModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="denialReasonModalLabel">Deny Application</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="denialReasonForm">
+                                                        <div class="form-group">
+                                                            <label for="denialReason">Reason for Denial</label>
+                                                            <textarea class="form-control" id="denialReason" rows="3"></textarea>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-danger" id="submitDenialReason">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal for viewing application details -->
+        <div class="modal fade" id="viewApplicationModal" tabindex="-1" role="dialog" aria-labelledby="viewApplicationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewApplicationModalLabel">Application Details</h5>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close" id="modalClose">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="viewApplicationSection">
+                        <!-- Application details go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        // Add event listener to the table, listening for clicks on buttons with class 'view-application-btn'
+        document.querySelector('table').addEventListener('click', function (event) {
+            if (event.target.id === 'view-application-btn') {
+
+                // Get the application ID from the data attribute of the clicked button
+                var applicationId = event.target.dataset.applicationId;
+
+                // Send an AJAX request to retrieve the application details from the server
+                fetch(`/Home/GetApplicationDetails?applicationId=${applicationId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Convert the birthdate from milliseconds to a Date object if it's not null or undefined
+                        var formattedBirthdate = data.birthdate ? new Date(parseInt(data.birthdate.substr(6))) : '';
+
+                        // If birthdate is not null or undefined, adjust and format it
+                        if (formattedBirthdate) {
+                            // Adjust the date to display the correct local date
+                            var adjustedBirthdate = new Date(formattedBirthdate.getTime() + formattedBirthdate.getTimezoneOffset() * 60000);
+
+                            // Add one day to the adjusted birthdate
+                            adjustedBirthdate.setDate(adjustedBirthdate.getDate() + 1);
+
+                            // Format the date as desired (e.g., YYYY-MM-DD)
+                            formattedBirthdate = adjustedBirthdate.toISOString().split('T')[0];
+                        }
+
+
+                        var modalContent = `
+                    <div class="row">
+                     <div class="col-md-6">
+                    <h4>Applicant's ID </h4>
+                    </div>
+                    <img src="${data.image}" style="width: 400px; height: 200px; padding-left: 100px; padding-bottom: 20px" />
+
+                    <hr>
+                        <div class="col-md-6">
+                            <h4> Personal Details </h4>
+                            <hr>
+                            <p><strong>Full Name:</strong> ${data.fullName || ''}</p>
+                            <p><strong>Mother's Maiden Name:</strong> ${data.mothersMaidenName || ''}</p>
+                            <p><strong>Birthdate:</strong> ${formattedBirthdate || ''}</p>
+                            <p><strong>Type of ID:</strong> ${data.typeOfId || ''}</p>
+                            <p><strong>ID Number:</strong> ${data.idNumber || ''}</p>
+                            <p><strong>Gender:</strong> ${data.gender || ''}</p>
+                            <p><strong>Civil Status:</strong> ${data.civilStatus || ''}</p>
+                            <p><strong>Citizenship:</strong> ${data.citizenship || ''}</p>
+                            <p><strong>Home Ownership:</strong> ${data.homeOwnership || ''}</p>
+                            <p><strong>Home Address:</strong> ${data.homeAddress || ''}</p>
+                            <p><strong>Plan: </strong> ${data.plans || ''}</p>
+                            <p><strong>Payment Method: </strong> ${data.modeOfPayment || ''}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4> Work Details </h4>
+                            <hr>
+                            <p><strong>Employment Status:</strong> ${data.employmentStatus || ''}</p>
+                            <p><strong>Total Household Income:</strong> ${data.totalHouseholdIncome || ''}</p>
+                            <p><strong>Occupation:</strong> ${data.occupation || ''}</p>
+                            <p><strong>Occupation Rank:</strong> ${data.occupationRank || ''}</p>
+                            <p><strong>Business Name:</strong> ${data.businessName || ''}</p>
+                            <p><strong>Business Address:</strong> ${data.businessAddress || ''}</p>
+                            <p><strong>Office Telephone:</strong> ${data.officeTelephone || ''}</p>
+                        </div>
+                    </div>
+                `;
+
+                        // Update the modal body with the populated content
+                        document.querySelector('#viewApplicationModal .modal-body').innerHTML = modalContent;
+
+                        // Open the modal
+                        $('#viewApplicationModal').modal('show');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        });
+
+        document.querySelectorAll('.delete-application-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const applicationId = this.getAttribute('data-application-id');
+
+                // Make an AJAX request to delete the application
+                fetch(`/Home/DeleteApplicationStatus?applicationId=${applicationId}`, {
+                    method: 'POST'
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Handle the response from the server
+                        console.log(data);
+                        if (data.success) {
+                            // Show SweetAlert for successful deletion
+                            Swal.fire('Application Deleted', '', 'success');
+
+                            setTimeout(function () {
+                                location.reload();
+                            }, 1000); // 2000 milliseconds = 2 seconds
+
+                        } else {
+                            // Show error message if deletion fails
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Show error message if AJAX request fails
+                        Swal.fire('Error', 'Failed to delete application.', 'error');
+                    });
+            });
+        });
+
+
+
+        function validateForm() {
+            // Check if the form is valid
+            if (!document.getElementById('applicationForm').checkValidity()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please make sure all inputs are valid.'
+                });
+                return false;
+            }
+            // If the form is valid, return true to allow form submission
+            return true;
+        }
+
+        // Function to handle form submission
+        function submitForm() {
+            // Retrieve form data
+            let formData = new FormData(document.getElementById('applicationForm'));
+
+            // Send formData to the server using AJAX
+            fetch('/Home/CreateApplication', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+
+                    // Show SweetAlert for successful submission
+                    Swal.fire('Application Submitted', '', 'success');
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000); // 2000 milliseconds = 2 seconds
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Event listener for Submit button click
+        document.getElementById('submitButton').addEventListener('click', function (event) {
+
+            submitForm();
+        });
+
+
+        // Event listener for Next button click
+        document.getElementById('nextButton').addEventListener('click', function () {
+            document.getElementById('personalInfo').style.display = 'none';
+            document.getElementById('employmentInfo').style.display = 'block';
+            document.getElementById('additionalInformation').style.display = 'none';
+            document.getElementById('nextButton').style.display = 'none';
+            document.getElementById('backButton').style.display = 'block';
+            document.getElementById('submitButton').style.display = 'block';
+        });
+
+        // Event listener for Back button click
+        document.getElementById('backButton').addEventListener('click', function () {
+            document.getElementById('personalInfo').style.display = 'block';
+            document.getElementById('additionalInformation').style.display = 'block';
+            document.getElementById('employmentInfo').style.display = 'none';
+            document.getElementById('nextButton').style.display = 'block';
+            document.getElementById('backButton').style.display = 'none';
+            document.getElementById('submitButton').style.display = 'none';
+        });
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        // Deny button click event handler
+        document.querySelectorAll('.deny-application-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Retrieve the application ID from the button's data attribute
+                var applicationId = this.getAttribute('data-application-id');
+                // Set the application ID in the denial reason modal for later use
+                document.getElementById('submitDenialReason').setAttribute('data-application-id', applicationId);
+                // Show the denial reason modal
+                $('#denialReasonModal').modal('show');
+            });
+        });
+
+        // Approve button click event handler
+        document.querySelectorAll('#approve-application-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Retrieve the application ID from the button's data attribute
+                var applicationId = this.getAttribute('data-application-id');
+
+                // Send an AJAX request to update the application status to "Approved"
+                fetch(`/Home/UpdateApplicationStatus?applicationId=${applicationId}&status=Approved`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Handle the response from the server
+                        console.log('Application status updated successfully:', data);
+                        // Show SweetAlert for approval
+                        Swal.fire('Application Approved', '', 'success');
+                        // Reload the page to update the table
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000); // 2000 milliseconds = 2 seconds
+
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+
+        // Submit denial reason button click event handler
+        document.getElementById('submitDenialReason').addEventListener('click', function () {
+            // Retrieve the application ID from the button's data attribute
+            var applicationId = this.getAttribute('data-application-id');
+            // Retrieve the denial reason from the form
+            var denialReason = document.getElementById('denialReason').value;
+
+            // Send an AJAX request to update the application status to "Denied" with the reason
+            fetch(`/Home/UpdateApplicationStatus?applicationId=${applicationId}&status=Denied&reason=${denialReason}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the response from the server
+                    console.log('Application status updated successfully:', data);
+                    // Show SweetAlert for denial
+                    Swal.fire('Application Denied', '', 'error');
+                    // Reload the page to update the table
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000); // 2000 milliseconds = 2 seconds
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+
+
+
+    <script>
+        // Deny button click event handler
+        document.getElementById('denyButton').addEventListener('click', function () {
+            // Show denial reason section
+            document.getElementById('denialReasonSection').style.display = 'block';
+            document.getElementById('viewApplicationSection').style.display = 'none';
+            document.getElementById('approveButton').style.display = 'none';
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('#modalClose').on('click', function () {
+                $('#viewApplicationModal').modal('hide');
+                $('#applicationModal').modal('hide');
+            })
+        })
+
+    </script>
+
+
+    <script>
+        // JavaScript to show/hide other ID input field based on selection
+        document.addEventListener("DOMContentLoaded", function () {
+            var typeOfIdSelect = document.getElementById("typeOfId");
+            var otherIdInput = document.getElementById("otherIdInput");
+
+            typeOfIdSelect.addEventListener("change", function () {
+                if (typeOfIdSelect.value === "Other") {
+                    otherIdInput.style.display = "block";
+                } else {
+                    otherIdInput.style.display = "none";
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+    <script>
+
+
+        var ctx = document.getElementById("chart-bars").getContext("2d");
+
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["M", "T", "W", "T", "F", "S", "S"],
+                datasets: [{
+                    label: "Sales",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    borderSkipped: false,
+                    backgroundColor: "rgba(255, 255, 255, .8)",
+                    data: [50, 20, 10, 22, 50, 10, 40],
+                    maxBarThickness: 6
+                },],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 500,
+                            beginAtZero: true,
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                            color: "#fff"
+                        },
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+
+
+        var ctx2 = document.getElementById("chart-line").getContext("2d");
+
+        new Chart(ctx2, {
+            type: "line",
+            data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Mobile apps",
+                    tension: 0,
+                    borderWidth: 0,
+                    pointRadius: 5,
+                    pointBackgroundColor: "rgba(255, 255, 255, .8)",
+                    pointBorderColor: "transparent",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderWidth: 4,
+                    backgroundColor: "transparent",
+                    fill: true,
+                    data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+                    maxBarThickness: 6
+
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+
+        var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+
+        new Chart(ctx3, {
+            type: "line",
+            data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Mobile apps",
+                    tension: 0,
+                    borderWidth: 0,
+                    pointRadius: 5,
+                    pointBackgroundColor: "rgba(255, 255, 255, .8)",
+                    pointBorderColor: "transparent",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderWidth: 4,
+                    backgroundColor: "transparent",
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxBarThickness: 6
+
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            color: '#f8f9fa',
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });</script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }</script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="~/Content/assets/js/material-dashboard.min.js?v=3.0.0"></script>
+</body>
+
+</html>
