@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TelnetDBModelStoreContainer" CdmEntityContainer="TelnetDBEntities">
+    <EntitySetMapping Name="customerAccounts">
+      <EntityTypeMapping TypeName="TelnetDBModel.customerAccounts">
+        <MappingFragment StoreEntitySet="customerAccounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="accountPassword" ColumnName="accountPassword" />
+          <ScalarProperty Name="telephoneNumber" ColumnName="telephoneNumber" />
+          <ScalarProperty Name="serviceAvailed" ColumnName="serviceAvailed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notificationLogs">
+      <EntityTypeMapping TypeName="TelnetDBModel.notificationLogs">
+        <MappingFragment StoreEntitySet="notificationLogs">
+          <ScalarProperty Name="logId" ColumnName="logId" />
+          <ScalarProperty Name="actionType" ColumnName="actionType" />
+          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+          <ScalarProperty Name="actionDate" ColumnName="actionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="TelnetDBModel.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userApplications">
+      <EntityTypeMapping TypeName="TelnetDBModel.userApplications">
+        <MappingFragment StoreEntitySet="userApplications">
+          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+          <ScalarProperty Name="applicationNumber" ColumnName="applicationNumber" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="mothersMaidenName" ColumnName="mothersMaidenName" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="typeOfId" ColumnName="typeOfId" />
+          <ScalarProperty Name="idNumber" ColumnName="idNumber" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="civilStatus" ColumnName="civilStatus" />
+          <ScalarProperty Name="citizenship" ColumnName="citizenship" />
+          <ScalarProperty Name="homeOwnership" ColumnName="homeOwnership" />
+          <ScalarProperty Name="homeAddress" ColumnName="homeAddress" />
+          <ScalarProperty Name="employmentStatus" ColumnName="employmentStatus" />
+          <ScalarProperty Name="totalHouseholdIncome" ColumnName="totalHouseholdIncome" />
+          <ScalarProperty Name="occupation" ColumnName="occupation" />
+          <ScalarProperty Name="occupationRank" ColumnName="occupationRank" />
+          <ScalarProperty Name="businessName" ColumnName="businessName" />
+          <ScalarProperty Name="businessAddress" ColumnName="businessAddress" />
+          <ScalarProperty Name="officeTelephone" ColumnName="officeTelephone" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="denialReason" ColumnName="denialReason" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="plans" ColumnName="plans" />
+          <ScalarProperty Name="modeOfPayment" ColumnName="modeOfPayment" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userCredentials">
+      <EntityTypeMapping TypeName="TelnetDBModel.userCredentials">
+        <MappingFragment StoreEntitySet="userCredentials">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userRoles">
+      <EntityTypeMapping TypeName="TelnetDBModel.userRoles">
+        <MappingFragment StoreEntitySet="userRoles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_UserRole">
+      <EntityTypeMapping TypeName="TelnetDBModel.vw_UserRole">
+        <MappingFragment StoreEntitySet="vw_UserRole">
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

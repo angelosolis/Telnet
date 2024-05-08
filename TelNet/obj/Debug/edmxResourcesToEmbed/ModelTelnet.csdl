@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TelnetDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="customerAccounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applicationId" Type="Int32" />
+    <Property Name="accountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="accountPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="serviceAvailed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="userApplications" Relationship="Self.FK_customerAccounts_customerAccounts" FromRole="customerAccounts" ToRole="userApplications" />
+  </EntityType>
+  <EntityType Name="notificationLogs">
+    <Key>
+      <PropertyRef Name="logId" />
+    </Key>
+    <Property Name="logId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="actionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="applicationId" Type="Int32" />
+    <Property Name="actionDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="userApplications" Relationship="Self.FK__notificat__appli__5812160E" FromRole="notificationLogs" ToRole="userApplications" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="userRoles" Relationship="Self.FK_userRoles_roles" FromRole="roles" ToRole="userRoles" />
+  </EntityType>
+  <EntityType Name="userApplications">
+    <Key>
+      <PropertyRef Name="applicationId" />
+    </Key>
+    <Property Name="applicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applicationNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mothersMaidenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="birthdate" Type="DateTime" Precision="0" />
+    <Property Name="typeOfId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idNumber" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="civilStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="citizenship" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="homeOwnership" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="homeAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="employmentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="totalHouseholdIncome" Type="Int32" />
+    <Property Name="occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="occupationRank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="businessName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="businessAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="officeTelephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="denialReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="plans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="modeOfPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="customerAccounts" Relationship="Self.FK_customerAccounts_customerAccounts" FromRole="userApplications" ToRole="customerAccounts" />
+    <NavigationProperty Name="notificationLogs" Relationship="Self.FK__notificat__appli__5812160E" FromRole="userApplications" ToRole="notificationLogs" />
+  </EntityType>
+  <EntityType Name="userCredentials">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="userRoles" Relationship="Self.FK_userRoles_userRoles" FromRole="userCredentials" ToRole="userRoles" />
+  </EntityType>
+  <EntityType Name="userRoles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="roleId" Type="Int32" />
+    <NavigationProperty Name="roles" Relationship="Self.FK_userRoles_roles" FromRole="userRoles" ToRole="roles" />
+    <NavigationProperty Name="userCredentials" Relationship="Self.FK_userRoles_userRoles" FromRole="userRoles" ToRole="userCredentials" />
+  </EntityType>
+  <EntityType Name="vw_UserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_customerAccounts_customerAccounts">
+    <End Role="userApplications" Type="Self.userApplications" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="customerAccounts" Type="Self.customerAccounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userApplications">
+        <PropertyRef Name="applicationId" />
+      </Principal>
+      <Dependent Role="customerAccounts">
+        <PropertyRef Name="applicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__notificat__appli__5812160E">
+    <End Role="userApplications" Type="Self.userApplications" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="notificationLogs" Type="Self.notificationLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userApplications">
+        <PropertyRef Name="applicationId" />
+      </Principal>
+      <Dependent Role="notificationLogs">
+        <PropertyRef Name="applicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userRoles_roles">
+    <End Role="roles" Type="Self.roles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="userRoles" Type="Self.userRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userRoles">
+        <PropertyRef Name="roleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userRoles_userRoles">
+    <End Role="userCredentials" Type="Self.userCredentials" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="userRoles" Type="Self.userRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userCredentials">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="userRoles">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TelnetDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customerAccounts" EntityType="Self.customerAccounts" />
+    <EntitySet Name="notificationLogs" EntityType="Self.notificationLogs" />
+    <EntitySet Name="roles" EntityType="Self.roles" />
+    <EntitySet Name="userApplications" EntityType="Self.userApplications" />
+    <EntitySet Name="userCredentials" EntityType="Self.userCredentials" />
+    <EntitySet Name="userRoles" EntityType="Self.userRoles" />
+    <EntitySet Name="vw_UserRole" EntityType="Self.vw_UserRole" />
+    <AssociationSet Name="FK_customerAccounts_customerAccounts" Association="Self.FK_customerAccounts_customerAccounts">
+      <End Role="userApplications" EntitySet="userApplications" />
+      <End Role="customerAccounts" EntitySet="customerAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__notificat__appli__5812160E" Association="Self.FK__notificat__appli__5812160E">
+      <End Role="userApplications" EntitySet="userApplications" />
+      <End Role="notificationLogs" EntitySet="notificationLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userRoles_roles" Association="Self.FK_userRoles_roles">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="userRoles" EntitySet="userRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userRoles_userRoles" Association="Self.FK_userRoles_userRoles">
+      <End Role="userCredentials" EntitySet="userCredentials" />
+      <End Role="userRoles" EntitySet="userRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

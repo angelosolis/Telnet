@@ -1,0 +1,696 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TeleX</title>
+    <link rel="shortcut icon" type="image/png" href="~/assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="~/assets/css/styles.min.css" />
+    <link rel="stylesheet" href="~/assets/css/apexcharts.css" />
+
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+         data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="./index.html" class="text-nowrap logo-img">
+                        <img src="~/assets/images/logos/background2.png" alt="" style="width: 120px; align-content: center;" />
+                    </a>
+                    <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">
+                            <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+                            <span class="hide-menu" style="font-size: 10px">Human Resource Management</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                                <iconify-icon icon="solar:widget-add-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="sidebar-divider lg"></span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+                                <iconify-icon icon="solar:layers-minimalistic-bold-duotone"></iconify-icon>
+                                <span class="hide-menu">Employee</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                                <iconify-icon icon="solar:danger-circle-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Departments</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                                <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Designations</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                                <iconify-icon icon="solar:file-text-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Announcements</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                                <iconify-icon icon="solar:text-field-focus-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Reporting & Analysis</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="sidebar-divider lg"></span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                                <iconify-icon icon="solar:login-3-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Sign Out</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                                <iconify-icon icon="solar:login-3-line-duotone"></iconify-icon>
+                                <span class="hide-menu">Help</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            <header class="app-header">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-block d-xl-none">
+                            <a class="nav-link sidebartoggler " id="headerCollapse" href="javascript:void(0)">
+                                <i class="ti ti-menu-2"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                        <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+                            <li class="nav-item d-none d-xl-flex nav-icon-hover-bg rounded-circle">
+                                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <iconify-icon icon="solar:magnifer-linear" class="fs-6"></iconify-icon>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    <img src="~/assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                                    <div class="message-body">
+                                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                            <i class="ti ti-user fs-6"></i>
+                                            <p class="mb-0 fs-3">My Profile</p>
+                                        </a>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                            <i class="ti ti-mail fs-6"></i>
+                                            <p class="mb-0 fs-3">My Account</p>
+                                        </a>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                            <i class="ti ti-list-check fs-6"></i>
+                                            <p class="mb-0 fs-3">My Task</p>
+                                        </a>
+                                        <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!--  Header End -->
+            <!-- Search Bar-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom">
+                            <input type="search" class="form-control" placeholder="Search here" id="search">
+                            <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
+                                <i class="ti ti-x fs-5 ms-3"></i>
+                            </a>
+                        </div>
+                        <div class="modal-body message-body" data-simplebar="init" style="display:none">
+                            <div class="simplebar-wrapper" style="margin: -16px;">
+                                <div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask">
+                                    <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                        <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden;">
+                                            <div class="simplebar-content" style="padding: 16px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div>
+                            </div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none; transform: translate3d(0px, 0px, 0px);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+    <!-- Import Js Files -->
+    <script src="~/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/sidebarmenu.js"></script>
+    <script src="~/assets/js/app.min.js"></script>
+    <script src="~/assets/libs/simplebar/dist/simplebar.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Basic Line Chart -------> LINE CHART
+            var options_line = {
+                series: [
+                    {
+                        name: "Desktops",
+                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                    },
+                ],
+                chart: {
+                    height: 350,
+                    type: "line",
+                    fontFamily: "inherit",
+                    zoom: {
+                        enabled: false,
+                    },
+                    offsetX: -10,
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                colors: ["var(--bs-primary)"],
+                stroke: {
+                    curve: "straight",
+                },
+                grid: {
+                    row: {
+                        colors: ["transparent"], // takes an array which will be repeated on columns
+                        opacity: 0.5,
+                    },
+                    padding: {
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0,
+                    },
+                    borderColor: "transparent",
+                },
+                xaxis: {
+                    categories: [
+                        "Jan",
+                        "Feb",
+                        "Mar",
+                        "Apr",
+                        "May",
+                        "Jun",
+                        "Jul",
+                        "Aug",
+                        "Sep",
+                    ],
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                yaxis: {
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                tooltip: {
+                    theme: "dark",
+                },
+            };
+
+            var chart_line_basic = new ApexCharts(
+                document.querySelector("#chart-line-basic"),
+                options_line
+            );
+            chart_line_basic.render();
+
+            // Data Label Line Chart   -------> LINE CHART
+            var options = {
+                series: [
+                    {
+                        name: "High - 2013",
+                        data: [28, 29, 33, 36, 32, 32, 33],
+                    },
+                    {
+                        name: "Low - 2013",
+                        data: [12, 11, 14, 18, 17, 13, 13],
+                    },
+                ],
+                chart: {
+                    fontFamily: "inherit",
+                    height: 350,
+                    type: "line",
+                    dropShadow: {
+                        enabled: true,
+                        color: "#000",
+                        top: 18,
+                        left: 7,
+                        blur: 10,
+                        opacity: 0.2,
+                    },
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                colors: ["var(--bs-primary)", "var(--bs-secondary)"],
+                dataLabels: {
+                    enabled: true,
+                },
+                stroke: {
+                    curve: "smooth",
+                },
+                grid: {
+                    borderColor: "transparent",
+                    row: {
+                        colors: ["transparent"], // takes an array which will be repeated on columns
+                        opacity: 0.5,
+                    },
+                },
+                markers: {
+                    size: 1,
+                },
+                xaxis: {
+                    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                yaxis: {
+                    min: 5,
+                    max: 40,
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                tooltip: {
+                    theme: "dark",
+                },
+                legend: {
+                    position: "top",
+                    horizontalAlign: "right",
+                    floating: true,
+                    offsetY: -25,
+                    offsetX: -5,
+                },
+            };
+
+            var chart_line_data = new ApexCharts(
+                document.querySelector("#chart-line-with-data-label"),
+                options
+            );
+            chart_line_data.render();
+
+            // Zoomable Line Chart -------> LINE CHART
+            var options_zoomable = {
+                series: [
+                    {
+                        name: "XYZ MOTORS",
+                        data: [
+                            {
+                                x: "02-10-2017 GMT",
+                                y: 34,
+                            },
+                            {
+                                x: "02-11-2017 GMT",
+                                y: 43,
+                            },
+                            {
+                                x: "02-12-2017 GMT",
+                                y: 31,
+                            },
+                            {
+                                x: "02-13-2017 GMT",
+                                y: 43,
+                            },
+                            {
+                                x: "02-14-2017 GMT",
+                                y: 33,
+                            },
+                            {
+                                x: "02-15-2017 GMT",
+                                y: 52,
+                            },
+                        ],
+                    },
+                ],
+                chart: {
+                    fontFamily: "inherit",
+                    type: "area",
+                    stacked: false,
+                    height: 350,
+                    zoom: {
+                        type: "x",
+                        enabled: true,
+                        autoScaleYaxis: true,
+                    },
+                    toolbar: {
+                        autoSelected: "zoom",
+                        show: false,
+                    },
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                grid: {
+                    borderColor: "transparent",
+                    padding: {
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0,
+                    },
+                },
+                colors: ["var(--bs-primary)"],
+                markers: {
+                    size: 0,
+                },
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        shadeIntensity: 1,
+                        inverseColors: false,
+                        opacityFrom: 0.12,
+                        opacityTo: 0,
+                        stops: [0, 90, 100],
+                    },
+                },
+                yaxis: {
+                    labels: {
+                        formatter: function (val) {
+                            return (val / 1000000).toFixed(0);
+                        },
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                xaxis: {
+                    type: "datetime",
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                tooltip: {
+                    shared: false,
+                    y: {
+                        formatter: function (val) {
+                            return (val / 1000000).toFixed(0);
+                        },
+                    },
+                    theme: "dark",
+                },
+            };
+
+            var chart_line_zoomable = new ApexCharts(
+                document.querySelector("#chart-line-zoomable"),
+                options_zoomable
+            );
+            chart_line_zoomable.render();
+
+            // Gradient Line Chart -------> LINE CHART
+            var options_gradient = {
+                series: [
+                    {
+                        name: "Likes",
+                        data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5],
+                    },
+                ],
+                chart: {
+                    fontFamily: "inherit",
+                    height: 350,
+                    type: "line",
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                stroke: {
+                    width: 7,
+                    curve: "smooth",
+                },
+                xaxis: {
+                    type: "datetime",
+                    categories: [
+                        "1/11/2000",
+                        "2/11/2000",
+                        "3/11/2000",
+                        "4/11/2000",
+                        "5/11/2000",
+                        "6/11/2000",
+                        "7/11/2000",
+                        "8/11/2000",
+                        "9/11/2000",
+                        "10/11/2000",
+                        "11/11/2000",
+                        "12/11/2000",
+                        "1/11/2001",
+                        "2/11/2001",
+                        "3/11/2001",
+                        "4/11/2001",
+                        "5/11/2001",
+                        "6/11/2001",
+                    ],
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                grid: {
+                    borderColor: "transparent",
+                    padding: {
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0,
+                    },
+                },
+                colors: ["#39b69a"],
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        shade: "dark",
+                        gradientToColors: ["var(--bs-primary)"],
+                        shadeIntensity: 1,
+                        type: "horizontal",
+                        opacityFrom: 1,
+                        opacityTo: 1,
+                        stops: [0, 100, 100, 100],
+                    },
+                },
+                markers: {
+                    size: 4,
+                    colors: ["var(--bs-primary)"],
+                    strokeColors: "#fff",
+                    strokeWidth: 2,
+                    hover: {
+                        size: 7,
+                    },
+                },
+                yaxis: {
+                    min: -10,
+                    max: 40,
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                tooltip: {
+                    theme: "dark",
+                },
+            };
+
+            var chart_line_gradient = new ApexCharts(
+                document.querySelector("#chart-line-gradient"),
+                options_gradient
+            );
+            chart_line_gradient.render();
+
+            var lastDate = 0;
+            var data = [];
+            var TICKINTERVAL = 86400000;
+            let XAXISRANGE = 777600000;
+
+            function getDayWiseTimeSeries(baseval, count, yrange) {
+                var i = 0;
+                while (i < count) {
+                    var x = baseval;
+                    var y =
+                        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+
+                    data.push({
+                        x,
+                        y,
+                    });
+                    lastDate = baseval;
+                    baseval += TICKINTERVAL;
+                    i++;
+                }
+            }
+
+            getDayWiseTimeSeries(new Date("11 Feb 2017 GMT").getTime(), 10, {
+                min: 10,
+                max: 90,
+            });
+
+            function getNewSeries(baseval, yrange) {
+                var newDate = baseval + TICKINTERVAL;
+                lastDate = newDate;
+
+                for (var i = 0; i < data.length - 10; i++) {
+                    // IMPORTANT
+                    // we reset the x and y of the data which is out of drawing area
+                    // to prevent memory leaks
+                    data[i].x = newDate - XAXISRANGE - TICKINTERVAL;
+                    data[i].y = 0;
+                }
+
+                data.push({
+                    x: newDate,
+                    y: Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min,
+                });
+            }
+
+            function resetData() {
+                // Alternatively, you can also reset the data at certain intervals to prevent creating a huge series
+                data = data.slice(data.length - 10, data.length);
+            }
+
+            // Realtime Line Chart -------> LINE CHART
+            var options_realtime = {
+                series: [
+                    {
+                        data: data.slice(),
+                    },
+                ],
+                chart: {
+                    fontFamily: "inherit",
+                    id: "realtime",
+                    height: 350,
+                    type: "line",
+                    animations: {
+                        enabled: true,
+                        easing: "linear",
+                        dynamicAnimation: {
+                            speed: 1000,
+                        },
+                    },
+                    toolbar: {
+                        show: false,
+                    },
+
+                    zoom: {
+                        enabled: false,
+                    },
+                },
+                grid: {
+                    borderColor: "transparent",
+                    padding: {
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0,
+                    },
+                },
+                colors: ["var(--bs-primary)"],
+                dataLabels: {
+                    enabled: false,
+                },
+                stroke: {
+                    curve: "smooth",
+                },
+                markers: {
+                    size: 0,
+                },
+                xaxis: {
+                    type: "datetime",
+                    range: XAXISRANGE,
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                yaxis: {
+                    max: 100,
+                    labels: {
+                        style: {
+                            colors: "#a1aab2",
+                        },
+                    },
+                },
+                tooltip: {
+                    theme: "dark",
+                },
+                legend: {
+                    show: false,
+                },
+            };
+
+            var chart_line_realtime = new ApexCharts(
+                document.querySelector("#chart-line-real-time"),
+                options_realtime
+            );
+            chart_line_realtime.render();
+
+            window.setInterval(function () {
+                getNewSeries(lastDate, {
+                    min: 10,
+                    max: 90,
+                });
+
+                chart_line_realtime.updateSeries([
+                    {
+                        data: data,
+                    },
+                ]);
+            }, 1000);
+        });
+    </script>
+
+    <!-- solar icons -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="~/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="~/assets/libs/apexcharts/dist/apexcharts.js"></script>
+    <script src="~/assets/js/dashboards/dashboard1.js"></script>
+    <script src="~/assets/libs/fullcalendar/index.global.min.js"></script>
+</body>
+
+</html>
