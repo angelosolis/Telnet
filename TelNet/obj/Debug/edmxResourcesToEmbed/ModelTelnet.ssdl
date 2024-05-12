@@ -10,6 +10,7 @@
     <Property Name="accountPassword" Type="nvarchar" MaxLength="50" />
     <Property Name="telephoneNumber" Type="nvarchar" MaxLength="50" />
     <Property Name="serviceAvailed" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="int" />
   </EntityType>
   <EntityType Name="notificationLogs">
     <Key>
@@ -66,6 +67,10 @@
     <Property Name="password" Type="nvarchar" MaxLength="50" />
     <Property Name="eid" Type="nvarchar" MaxLength="50" />
     <Property Name="status" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="department" Type="nvarchar" MaxLength="50" />
+    <Property Name="station" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="userRoles">
     <Key>

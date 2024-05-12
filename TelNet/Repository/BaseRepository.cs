@@ -88,5 +88,10 @@ namespace TelNet.Repositories
                 return ErrorCode.Error;
             }
         }
+
+        public ErrorCode UpdateStatus(object id, int status)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

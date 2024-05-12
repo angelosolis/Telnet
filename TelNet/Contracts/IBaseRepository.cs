@@ -18,8 +18,7 @@ namespace TelNet.Contracts
         ErrorCode Create(T t);
         ErrorCode Update(object id, T t);
         ErrorCode Delete(object id);
-
-
+        ErrorCode UpdateStatus(object id, int status);
     }
 }
  

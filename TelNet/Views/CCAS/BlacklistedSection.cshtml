@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "BlacklistedSection";
+    Layout = "~/Views/CCAS/_LayoutCCAS.cshtml";
+}
+
+<h2>BlacklistedSection</h2>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        .btn {
+            margin-bottom: 5px;
+        }
+
+        .dt-length {
+            display: none;
+        }
+
+        table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > th.dt-ordering-asc, table.dataTable thead > tr > th.dt-ordering-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc, table.dataTable thead > tr > td.dt-ordering-asc, table.dataTable thead > tr > td.dt-ordering-desc {
+            position: relative;
+            padding-right: 0px !important;
+            text-align: center;
+        }
+
+        table.dataTable > tbody > tr > th, table.dataTable > tbody > tr > td {
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+
+        #clock {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Blacklisted Section Overview</h4>
+
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Subscribed Plan</th>
+                            <th>Account Name</th>
+                            <th>Phone No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1234567</td>
+                            <td>FiberX Plan 800mbps</td>
+                            <td>Larayos, Princess Ann S.</td>
+                            <td>2541882</td>
+                        </tr>
+                        <tr>
+                            <td>1234567</td>
+                            <td>FiberX Plan 800mbps</td>
+                            <td>Larayos, Princess Ann S.</td>
+                            <td>2544562</td>
+                        </tr>
+                        <tr>
+                            <td>1234567</td>
+                            <td>FiberX Plan 800mbps</td>
+                            <td>Larayos, Princess Ann S.</td>
+                            <td>2548782</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let table = new DataTable('#myTable');
+
+    function markAsPaid(invoiceId) {
+        // Send AJAX request to update status
+        $.ajax({
+            url: '/CCAS/UpdateStatus',
+            type: 'POST',
+            data: { id: invoiceId, status: 1 },
+            success: function (response) {
+                // Show success message
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Invoice successfully marked as Paid!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            },
+            error: function (xhr, status, error) {
+                // Handle error
+                console.error(xhr.responseText);
+                // Show error message
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'An error occurred while processing your request.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    }
+
+    window.addEventListener("load", () => {
+        clock();
+        function clock() {
+            const today = new Date();
+
+            // get time components
+            const hours = today.getHours();
+            const minutes = today.getMinutes();
+            const seconds = today.getSeconds();
+
+            //add '0' to hour, minute & second when they are less 10
+            const hour = hours < 10 ? "0" + hours : hours;
+            const minute = minutes < 10 ? "0" + minutes : minutes;
+            const second = seconds < 10 ? "0" + seconds : seconds;
+
+            //make clock a 12-hour time clock
+            const hourTime = hour > 12 ? hour - 12 : hour;
+
+            // if (hour === 0) {
+            //   hour = 12;
+            // }
+            //assigning 'am' or 'pm' to indicate time of the day
+            const ampm = hour < 12 ? "AM" : "PM";
+
+            // get date components
+            const month = today.getMonth();
+            const year = today.getFullYear();
+            const day = today.getDate();
+
+            //declaring a list of all months in  a year
+            const monthList = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ];
+
+            //get current date and time
+            const date = monthList[month] + " " + day + ", " + year;
+            const time = hourTime + ":" + minute + ":" + second + ampm;
+
+            //combine current date and time
+            const dateTime = date + " - " + time;
+
+            //print current date and time to the DOM
+            document.getElementById("date-time").innerHTML = dateTime;
+            setTimeout(clock, 1000);
+        }
+    });
+
+</script>

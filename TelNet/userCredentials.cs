@@ -25,6 +25,10 @@ namespace TelNet
         public string password { get; set; }
         public string eid { get; set; }
         public Nullable<int> status { get; set; }
+        public string name { get; set; }
+        public string designation { get; set; }
+        public string department { get; set; }
+        public string station { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<userRoles> userRoles { get; set; }

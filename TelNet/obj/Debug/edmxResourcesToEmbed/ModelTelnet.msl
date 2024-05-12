@@ -4,6 +4,7 @@
     <EntitySetMapping Name="customerAccounts">
       <EntityTypeMapping TypeName="TelnetDBModel.customerAccounts">
         <MappingFragment StoreEntitySet="customerAccounts">
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="applicationId" ColumnName="applicationId" />
           <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
@@ -65,6 +66,10 @@
     <EntitySetMapping Name="userCredentials">
       <EntityTypeMapping TypeName="TelnetDBModel.userCredentials">
         <MappingFragment StoreEntitySet="userCredentials">
+          <ScalarProperty Name="station" ColumnName="station" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="userId" ColumnName="userId" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />

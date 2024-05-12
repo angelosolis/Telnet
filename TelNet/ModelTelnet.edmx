@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TelnetDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TelnetDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="customerAccounts">
           <Key>
             <PropertyRef Name="id" />
@@ -15,6 +15,7 @@
           <Property Name="accountPassword" Type="nvarchar" MaxLength="50" />
           <Property Name="telephoneNumber" Type="nvarchar" MaxLength="50" />
           <Property Name="serviceAvailed" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="notificationLogs">
           <Key>
@@ -71,6 +72,10 @@
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="eid" Type="nvarchar" MaxLength="50" />
           <Property Name="status" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="department" Type="nvarchar" MaxLength="50" />
+          <Property Name="station" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="userRoles">
           <Key>
@@ -177,8 +182,7 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
             <End Role="userRoles" EntitySet="userRoles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TelnetDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -193,6 +197,7 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
           <Property Name="telephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="serviceAvailed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="userApplications" Relationship="Self.FK_customerAccounts_customerAccounts" FromRole="customerAccounts" ToRole="userApplications" />
+          <Property Name="status" Type="Int32" />
         </EntityType>
         <EntityType Name="notificationLogs">
           <Key>
@@ -254,6 +259,10 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
           <Property Name="eid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="status" Type="Int32" />
           <NavigationProperty Name="userRoles" Relationship="Self.FK_userRoles_userRoles" FromRole="userCredentials" ToRole="userRoles" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="userRoles">
           <Key>
@@ -363,6 +372,7 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
           <EntitySetMapping Name="customerAccounts">
             <EntityTypeMapping TypeName="TelnetDBModel.customerAccounts">
               <MappingFragment StoreEntitySet="customerAccounts">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="applicationId" ColumnName="applicationId" />
                 <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
@@ -424,6 +434,10 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
           <EntitySetMapping Name="userCredentials">
             <EntityTypeMapping TypeName="TelnetDBModel.userCredentials">
               <MappingFragment StoreEntitySet="userCredentials">
+                <ScalarProperty Name="station" ColumnName="station" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />

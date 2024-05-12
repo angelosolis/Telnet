@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "ActiveServices";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Plans Interface</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+        .container-fluid {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Billing Process Automation</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Billing Automation Process</h4>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="card" data-bs-toggle="modal" data-bs-target="#taskDetailsModal">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal">Scheduled Tasks</a>
+                                    </h5>
+                                    <ul id="scheduledTasksList"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Alerts Section -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Billing Alerts</h5>
+                                    <ul id="billingAlertsList"></ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Settings Section -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Settings</h5>
+                                    <button class="btn btn-primary" onclick="generateInvoices()">Generate Invoices</button>
+                                    <button class="btn btn-primary" onclick="reminders()">Send Reminders</button>
+                                    <button class="btn btn-primary" onclick="exportData()">Export Data</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for displaying task details -->
+    <div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskDetailsModalLabel">Task Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Table to display task details -->
+                    <table class="table" id="modalTable">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Schedule</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populate task details dynamically using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+        let table = new DataTable('#ratePlansTable');
+
+        function exportTable() {
+            const doc = new jsPDF();
+            doc.autoTable({ html: '#ratePlansTable' });
+            doc.save('ratePlans.pdf');
+        }
+
+
+
+    </script>
+
+    <script>
+        // Function to generate invoices
+        function generateInvoices() {
+            // Implement invoice generation logic
+            // Example: Generate invoices for all customers and send them via email
+            Swal.fire({
+                icon: 'success',
+                title: 'Invoices Generated',
+                text: 'Invoices have been generated successfully.'
+            });
+        }
+
+        // Function to send reminders
+        function sendReminders() {
+
+            const rowToUpdate = document.querySelector('#modalTable tr:nth-child(2)');
+            if (rowToUpdate) {
+                // Update the status in the row
+                const statusCell = rowToUpdate.querySelector('td:nth-child(3)');
+
+                
+                statusCell.textContent = 'Completed';
+
+
+                reminders();
+            }
+
+
+           
+        }
+
+        function reminders() {
+            // Show success message
+            Swal.fire({
+                icon: 'success',
+                title: 'Reminders Sent',
+                text: 'Payment reminders have been sent successfully.'
+            });
+        }
+
+        // Function to export data
+        function exportData() {
+            // Implement data export logic
+            // Example: Export billing data for analysis or reporting
+            Swal.fire({
+                icon: 'success',
+                title: 'Data Exported',
+                text: 'Billing data has been exported successfully.'
+            });
+        }
+
+        // Function to display scheduled tasks
+        function displayScheduledTasks(tasks) {
+            const tasksList = document.getElementById('scheduledTasksList');
+            tasks.forEach(task => {
+                const listItem = document.createElement('li');
+
+                // Add line breaks after each sentence
+                const formattedTask = task.replace(/\.\s+/g, '.<br>');
+                listItem.innerHTML = formattedTask;
+                tasksList.appendChild(listItem);
+            });
+        }
+
+        // Function to display billing alerts
+        function displayBillingAlerts(alerts) {
+            const alertsList = document.getElementById('billingAlertsList');
+            alerts.forEach(alert => {
+                const listItem = document.createElement('li');
+                // Add line breaks after each sentence
+                const formattedAlert = alert.replace(/\.\s+/g, '.<br>');
+                listItem.innerHTML = formattedAlert;
+                alertsList.appendChild(listItem);
+            });
+        }
+
+        // Sample data for scheduled tasks and billing alerts
+        const scheduledTasks = ['-Generating monthly invoices every 1st of the month', '-Automatically send payment reminders when due'];
+        const billingAlerts = ['-Overdue payment for Account Number: 1232, 2143, 5423, 1343...', '-Billing payment received from Account Number: 2314, 5454, 7642, 4343...'];
+
+        // Display sample data
+        displayScheduledTasks(scheduledTasks);
+        displayBillingAlerts(billingAlerts);
+
+
+        // Example: Dynamically populate task details in the modal
+        const taskDetails = [
+            { task: 'Invoice Generation', schedule: 'Monthly', status: 'Completed' },
+            { task: 'Payment Reminders', schedule: 'Daily', status: 'Pending' }
+            // Add more task details here...
+        ];
+
+        const modalBody = document.querySelector('#taskDetailsModal .modal-body tbody');
+        taskDetails.forEach(detail => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+        <td>${detail.task}</td>
+        <td>${detail.schedule}</td>
+        <td>${detail.status}</td>
+        <td>
+            <button type="button" class="btn btn-success" ${detail.status === 'Completed' ? 'disabled' : ''} onclick="${detail.task === 'Invoice Generation' ? 'generateInvoices()' : 'sendReminders()'}">Send</button>
+        </td>
+    `;
+            modalBody.appendChild(row);
+        });
+
+
+    </script>
+</body>
+</html>

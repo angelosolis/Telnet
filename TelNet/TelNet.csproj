@@ -174,10 +174,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contracts\IBaseRepository.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CCASController.cs" />
+    <Compile Include="Controllers\DocumentManagementController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HRMController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SDFICOController.cs" />
     <Compile Include="customerAccounts.cs">
       <DependentUpon>ModelTelnet.tt</DependentUpon>
     </Compile>
@@ -1800,6 +1803,50 @@
     <Content Include="Views\Home\RegisteredCustomers.cshtml" />
     <Content Include="Views\HRM\HRMDashboard.cshtml" />
     <Content Include="Views\HRM\_LayoutHRM.cshtml" />
+    <Content Include="Views\HRM\Onboarding.cshtml" />
+    <Content Include="Views\HRM\Management.cshtml" />
+    <Content Include="Views\HRM\ReportingAnalysis.cshtml" />
+    <Content Include="Views\HRM\Performance.cshtml" />
+    <Content Include="Views\HRM\Department.cshtml" />
+    <Content Include="Views\HRM\Designation.cshtml" />
+    <Content Include="Views\HRM\Announcements.cshtml" />
+    <Content Include="Views\SDFICO\RatePlans.cshtml" />
+    <Content Include="Views\SDFICO\_LayoutSDFICO.cshtml" />
+    <Content Include="Views\SDFICO\ActiveServices.cshtml" />
+    <Content Include="Views\SDFICO\BillingAutomation.cshtml" />
+    <Content Include="Views\SDFICO\BillDetails.cshtml" />
+    <Content Include="Views\SDFICO\Invoice.cshtml" />
+    <Content Include="Views\SDFICO\FinancialReports.cshtml" />
+    <Content Include="Views\SDFICO\GeneralLedger.cshtml" />
+    <Content Include="Views\SDFICO\ViewPayables.cshtml" />
+    <Content Include="Views\SDFICO\ViewReceivables.cshtml" />
+    <Content Include="Views\SDFICO\ViewAssets.cshtml" />
+    <Content Include="Views\SDFICO\ViewBankTransactions.cshtml" />
+    <Content Include="Views\SDFICO\ViewTaxTransactions.cshtml" />
+    <Content Include="Views\SDFICO\ViewBudgets.cshtml" />
+    <Content Include="Views\SDFICO\ViewProfitCenters.cshtml" />
+    <Content Include="Views\SDFICO\ViewProfitabilityReports.cshtml" />
+    <Content Include="Views\SDFICO\ViewProductCosts.cshtml" />
+    <Content Include="Views\Login\CreateApplication.cshtml" />
+    <Content Include="Views\CCAS\_LayoutCCAS.cshtml" />
+    <Content Include="Views\CCAS\AccountStanding.cshtml" />
+    <Content Include="Views\CCAS\ServiceStanding.cshtml" />
+    <Content Include="Views\CCAS\TerminationSection.cshtml" />
+    <Content Include="Views\CCAS\BlacklistedSection.cshtml" />
+    <Content Include="Views\CCAS\DataAnalysis.cshtml" />
+    <Content Include="Views\DocumentManagement\Index.cshtml" />
+    <Content Include="Views\DocumentManagement\HRM.cshtml" />
+    <Content Include="Views\DocumentManagement\SD.cshtml" />
+    <Content Include="Views\DocumentManagement\CAS.cshtml" />
+    <Content Include="Views\DocumentManagement\CRM.cshtml" />
+    <Content Include="Views\DocumentManagement\Fico.cshtml" />
+    <Content Include="Views\DocumentManagement\Trash.cshtml" />
+    <Content Include="Views\DocumentManagement\TrashFico.cshtml" />
+    <Content Include="Views\DocumentManagement\TrashSD.cshtml" />
+    <Content Include="Views\DocumentManagement\TrashCAS.cshtml" />
+    <Content Include="Views\DocumentManagement\TrashHRM.cshtml" />
+    <Content Include="Views\DocumentManagement\TrashCRM.cshtml" />
+    <Content Include="Views\DocumentManagement\_LayoutDocument.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1838,13 +1885,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-	
     <TypeScriptCompile Include="assets\libs\apexcharts\types\apexcharts.d.ts" />
     <TypeScriptCompile Include="assets\libs\simplebar\dist\simplebar.d.ts" />
   </ItemGroup>
-	<PropertyGroup>
-		<TypeScriptLib>es2015,dom</TypeScriptLib>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TypeScriptLib>es2015,dom</TypeScriptLib>
+  </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

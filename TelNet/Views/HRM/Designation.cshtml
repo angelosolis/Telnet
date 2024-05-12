@@ -1,0 +1,279 @@
+﻿
+@{
+    ViewBag.Title = "Designation";
+    Layout = "~/Views/HRM/_LayoutHRM.cshtml";
+}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.all.min.js"></script>
+
+
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr />
+                <h4 id="tableTitle" style="text-align: center">Employees</h4>
+                <table class="table table-responsive" id="myTable" style="display: block;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Department</th>
+                            <th>Station</th>
+                            <th>Username</th>
+                            <th>Access Code</th>
+                            <th>Employee ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Smith, John</td>
+                            <td>Sales Manager</td>
+                            <td>Sales and Distribution</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jsmith</td>
+                            <td>pass123</td>
+                            <td>TXBM001</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Emily</td>
+                            <td>Financial Analyst</td>
+                            <td>Finance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>emiller</td>
+                            <td>abc456</td>
+                            <td>TXBM002</td>
+                        </tr>
+                        <tr>
+                            <td>Chen, Lily</td>
+                            <td>Marketing Specialist</td>
+                            <td>Marketing</td>
+                            <td>Negros Occidental</td>
+                            <td>lchen</td>
+                            <td>qwerty</td>
+                            <td>TXBM003</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson, Brian</td>
+                            <td>HR Manager</td>
+                            <td>Human Resources</td>
+                            <td>IT Park, Cebu</td>
+                            <td>bjohnson</td>
+                            <td>123pass</td>
+                            <td>TXBM004</td>
+                        </tr>
+                        <tr>
+                            <td>Lee, Katherine</td>
+                            <td>IT Specialist</td>
+                            <td>IT</td>
+                            <td>Negros Occidental</td>
+                            <td>klee</td>
+                            <td>lee123</td>
+                            <td>TXBM005</td>
+                        </tr>
+                        <tr>
+                            <td>Thomas, David</td>
+                            <td>Operations Manager</td>
+                            <td>Operations</td>
+                            <td>Leyte</td>
+                            <td>dthomas</td>
+                            <td>thomas456</td>
+                            <td>TXBM006</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Patricia</td>
+                            <td>Customer Service Rep</td>
+                            <td>Customer Service</td>
+                            <td>IT Park, Cebu</td>
+                            <td>pgonzalez</td>
+                            <td>welcome7</td>
+                            <td>TXBM007</td>
+                        </tr>
+                        <tr>
+                            <td>Wright, Christopher</td>
+                            <td>Software Engineer</td>
+                            <td>IT</td>
+                            <td>Leyte</td>
+                            <td>cwright</td>
+                            <td>pass123</td>
+                            <td>TXBM008</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Andrew</td>
+                            <td>Sales Representative</td>
+                            <td>Sales and Distribution</td>
+                            <td>Negros Occidental</td>
+                            <td>amiller</td>
+                            <td>abc123</td>
+                            <td>TXBM009</td>
+                        </tr>
+                        <tr>
+                            <td>Allen, Kevin</td>
+                            <td>Marketing Manager</td>
+                            <td>Marketing</td>
+                            <td>IT Park, Cebu</td>
+                            <td>kallen</td>
+                            <td>pass456</td>
+                            <td>TXBM010</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rachel</td>
+                            <td>Accountant</td>
+                            <td>Finance</td>
+                            <td>Negros Occidental</td>
+                            <td>rbrown</td>
+                            <td>brown123</td>
+                            <td>TXBM011</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Carlos</td>
+                            <td>Production Manager</td>
+                            <td>Production</td>
+                            <td>Leyte</td>
+                            <td>cgonzalez</td>
+                            <td>welcome12</td>
+                            <td>TXBM012</td>
+                        </tr>
+                        <tr>
+                            <td>Adams, Jennifer</td>
+                            <td>Research Analyst</td>
+                            <td>Research</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jadams</td>
+                            <td>adams456</td>
+                            <td>TXBM013</td>
+                        </tr>
+                        <tr>
+                            <td>Rodriguez, Sofia</td>
+                            <td>Project Manager</td>
+                            <td>Project Management</td>
+                            <td>Negros Occidental</td>
+                            <td>srodriguez</td>
+                            <td>123abc</td>
+                            <td>TXBM014</td>
+                        </tr>
+                        <tr>
+                            <td>Bell, Jonathan</td>
+                            <td>Quality Assurance Specialist</td>
+                            <td>Quality Assurance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jbell</td>
+                            <td>bell123</td>
+                            <td>TXBM015</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson, Sarah</td>
+                            <td>HR Coordinator</td>
+                            <td>Human Resources</td>
+                            <td>IT Park, Cebu</td>
+                            <td>sarahj</td>
+                            <td>sarahpass</td>
+                            <td>TXBM016</td>
+                        </tr>
+                        <tr>
+                            <td>Nguyen, Minh</td>
+                            <td>Software Developer</td>
+                            <td>IT</td>
+                            <td>Leyte</td>
+                            <td>minhnguyen</td>
+                            <td>nguyen456</td>
+                            <td>TXBM017</td>
+                        </tr>
+                        <tr>
+                            <td>Gomez, Maria</td>
+                            <td>Customer Support Specialist</td>
+                            <td>Customer Service</td>
+                            <td>Negros Occidental</td>
+                            <td>mgomez</td>
+                            <td>gomez789</td>
+                            <td>TXBM018</td>
+                        </tr>
+                        <tr>
+                            <td>Chang, Michael</td>
+                            <td>Marketing Director</td>
+                            <td>Marketing</td>
+                            <td>IT Park, Cebu</td>
+                            <td>mchang</td>
+                            <td>changpass</td>
+                            <td>TXBM019</td>
+                        </tr>
+                        <tr>
+                            <td>Lopez, Juan</td>
+                            <td>Accounting Manager</td>
+                            <td>Finance</td>
+                            <td>Negros Occidental</td>
+                            <td>jlopez</td>
+                            <td>juan123</td>
+                            <td>TXBM020</td>
+                        </tr>
+                        <tr>
+                            <td>Kim, Eunji</td>
+                            <td>Graphic Designer</td>
+                            <td>Creative</td>
+                            <td>IT Park, Cebu</td>
+                            <td>ekim</td>
+                            <td>eunji456</td>
+                            <td>TXBM021</td>
+                        </tr>
+                        <tr>
+                            <td>Wong, David</td>
+                            <td>Operations Supervisor</td>
+                            <td>Operations</td>
+                            <td>Leyte</td>
+                            <td>davidw</td>
+                            <td>wongpass</td>
+                            <td>TXBM022</td>
+                        </tr>
+                        <tr>
+                            <td>Tran, Linh</td>
+                            <td>Sales Associate</td>
+                            <td>Sales and Distribution</td>
+                            <td>IT Park, Cebu</td>
+                            <td>linhtran</td>
+                            <td>linhpass</td>
+                            <td>TXBM023</td>
+                        </tr>
+                        <tr>
+                            <td>Lee, Seo-joon</td>
+                            <td>Customer Success Manager</td>
+                            <td>Customer Service</td>
+                            <td>Negros Occidental</td>
+                            <td>slee</td>
+                            <td>seojoon123</td>
+                            <td>TXBM024</td>
+                        </tr>
+                        <tr>
+                            <td>Yamamoto, Yuki</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Quality Assurance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>yyamamoto</td>
+                            <td>yuki456</td>
+                            <td>TXBM025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <script>
+    let table = new DataTable('#myTable');
+                </script>
+
+
+
+

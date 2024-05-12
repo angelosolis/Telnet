@@ -1,0 +1,891 @@
+﻿
+@{
+    ViewBag.Title = "Onboarding";
+    Layout = "~/Views/HRM/_LayoutHRM.cshtml";
+}
+
+<h2>Onboarding</h2>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        .dt-info, .dt-paging, .dt-length {
+            display: none;
+        }
+        .dt-search {
+            float: right;
+            padding-bottom: 20px;
+        }
+
+        td, th {
+            text-align: center;
+        }
+        </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <a href="#" class="btn btn-outline-primary" onclick="showTable('newHire')">New Hire</a>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <a href="#" class="btn btn-outline-primary" onclick="showTable('verified')">Verified</a>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <a href="#" class="btn btn-outline-primary" onclick="showTable('taskAssigned')">Task Assigned</a>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <a href="#" class="btn btn-outline-primary" onclick="showTable('training')">Training</a>
+                    </div>
+                </div>
+                <hr />
+                <h4 id="tableTitle" style="text-align: center">New Hire</h4>
+                <table class="table table-responsive myTable newHireTable" id="myTable" style="display: block;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Department</th>
+                            <th>Station</th>
+                            <th>Username</th>
+                            <th>Access Code</th>
+                            <th>Employee ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Smith, John</td>
+                            <td>Sales Manager</td>
+                            <td>Sales and Distribution</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jsmith</td>
+                            <td>pass123</td>
+                            <td>TXBM001</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Emily</td>
+                            <td>Financial Analyst</td>
+                            <td>Finance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>emiller</td>
+                            <td>abc456</td>
+                            <td>TXBM002</td>
+                        </tr>
+                        <tr>
+                            <td>Chen, Lily</td>
+                            <td>Marketing Specialist</td>
+                            <td>Marketing</td>
+                            <td>Negros Occidental</td>
+                            <td>lchen</td>
+                            <td>qwerty</td>
+                            <td>TXBM003</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson, Brian</td>
+                            <td>HR Manager</td>
+                            <td>Human Resources</td>
+                            <td>IT Park, Cebu</td>
+                            <td>bjohnson</td>
+                            <td>123pass</td>
+                            <td>TXBM004</td>
+                        </tr>
+                        <tr>
+                            <td>Lee, Katherine</td>
+                            <td>IT Specialist</td>
+                            <td>IT</td>
+                            <td>Negros Occidental</td>
+                            <td>klee</td>
+                            <td>lee123</td>
+                            <td>TXBM005</td>
+                        </tr>
+                        <tr>
+                            <td>Thomas, David</td>
+                            <td>Operations Manager</td>
+                            <td>Operations</td>
+                            <td>Leyte</td>
+                            <td>dthomas</td>
+                            <td>thomas456</td>
+                            <td>TXBM006</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Patricia</td>
+                            <td>Customer Service Rep</td>
+                            <td>Customer Service</td>
+                            <td>IT Park, Cebu</td>
+                            <td>pgonzalez</td>
+                            <td>welcome7</td>
+                            <td>TXBM007</td>
+                        </tr>
+                        <tr>
+                            <td>Wright, Christopher</td>
+                            <td>Software Engineer</td>
+                            <td>IT</td>
+                            <td>Leyte</td>
+                            <td>cwright</td>
+                            <td>pass123</td>
+                            <td>TXBM008</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Andrew</td>
+                            <td>Sales Representative</td>
+                            <td>Sales and Distribution</td>
+                            <td>Negros Occidental</td>
+                            <td>amiller</td>
+                            <td>abc123</td>
+                            <td>TXBM009</td>
+                        </tr>
+                        <tr>
+                            <td>Allen, Kevin</td>
+                            <td>Marketing Manager</td>
+                            <td>Marketing</td>
+                            <td>IT Park, Cebu</td>
+                            <td>kallen</td>
+                            <td>pass456</td>
+                            <td>TXBM010</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rachel</td>
+                            <td>Accountant</td>
+                            <td>Finance</td>
+                            <td>Negros Occidental</td>
+                            <td>rbrown</td>
+                            <td>brown123</td>
+                            <td>TXBM011</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Carlos</td>
+                            <td>Production Manager</td>
+                            <td>Production</td>
+                            <td>Leyte</td>
+                            <td>cgonzalez</td>
+                            <td>welcome12</td>
+                            <td>TXBM012</td>
+                        </tr>
+                        <tr>
+                            <td>Adams, Jennifer</td>
+                            <td>Research Analyst</td>
+                            <td>Research</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jadams</td>
+                            <td>adams456</td>
+                            <td>TXBM013</td>
+                        </tr>
+                        <tr>
+                            <td>Rodriguez, Sofia</td>
+                            <td>Project Manager</td>
+                            <td>Project Management</td>
+                            <td>Negros Occidental</td>
+                            <td>srodriguez</td>
+                            <td>123abc</td>
+                            <td>TXBM014</td>
+                        </tr>
+                        <tr>
+                            <td>Bell, Jonathan</td>
+                            <td>Quality Assurance Specialist</td>
+                            <td>Quality Assurance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jbell</td>
+                            <td>bell123</td>
+                            <td>TXBM015</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson, Sarah</td>
+                            <td>HR Coordinator</td>
+                            <td>Human Resources</td>
+                            <td>IT Park, Cebu</td>
+                            <td>sarahj</td>
+                            <td>sarahpass</td>
+                            <td>TXBM016</td>
+                        </tr>
+                        <tr>
+                            <td>Nguyen, Minh</td>
+                            <td>Software Developer</td>
+                            <td>IT</td>
+                            <td>Leyte</td>
+                            <td>minhnguyen</td>
+                            <td>nguyen456</td>
+                            <td>TXBM017</td>
+                        </tr>
+                        <tr>
+                            <td>Gomez, Maria</td>
+                            <td>Customer Support Specialist</td>
+                            <td>Customer Service</td>
+                            <td>Negros Occidental</td>
+                            <td>mgomez</td>
+                            <td>gomez789</td>
+                            <td>TXBM018</td>
+                        </tr>
+                        <tr>
+                            <td>Chang, Michael</td>
+                            <td>Marketing Director</td>
+                            <td>Marketing</td>
+                            <td>IT Park, Cebu</td>
+                            <td>mchang</td>
+                            <td>changpass</td>
+                            <td>TXBM019</td>
+                        </tr>
+                        <tr>
+                            <td>Lopez, Juan</td>
+                            <td>Accounting Manager</td>
+                            <td>Finance</td>
+                            <td>Negros Occidental</td>
+                            <td>jlopez</td>
+                            <td>juan123</td>
+                            <td>TXBM020</td>
+                        </tr>
+                        <tr>
+                            <td>Kim, Eunji</td>
+                            <td>Graphic Designer</td>
+                            <td>Creative</td>
+                            <td>IT Park, Cebu</td>
+                            <td>ekim</td>
+                            <td>eunji456</td>
+                            <td>TXBM021</td>
+                        </tr>
+                        <tr>
+                            <td>Wong, David</td>
+                            <td>Operations Supervisor</td>
+                            <td>Operations</td>
+                            <td>Leyte</td>
+                            <td>davidw</td>
+                            <td>wongpass</td>
+                            <td>TXBM022</td>
+                        </tr>
+                        <tr>
+                            <td>Tran, Linh</td>
+                            <td>Sales Associate</td>
+                            <td>Sales and Distribution</td>
+                            <td>IT Park, Cebu</td>
+                            <td>linhtran</td>
+                            <td>linhpass</td>
+                            <td>TXBM023</td>
+                        </tr>
+                        <tr>
+                            <td>Lee, Seo-joon</td>
+                            <td>Customer Success Manager</td>
+                            <td>Customer Service</td>
+                            <td>Negros Occidental</td>
+                            <td>slee</td>
+                            <td>seojoon123</td>
+                            <td>TXBM024</td>
+                        </tr>
+                        <tr>
+                            <td>Yamamoto, Yuki</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Quality Assurance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>yyamamoto</td>
+                            <td>yuki456</td>
+                            <td>TXBM025</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-responsive myTable verifiedTable" id="myTable2" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Department</th>
+                            <th>Station</th>
+                            <th>Username</th>
+                            <th>Access Code</th>
+                            <th>Employee ID</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Smith, John</td>
+                            <td>Sales Manager</td>
+                            <td>Sales and Distribution</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jsmith</td>
+                            <td>pass123</td>
+                            <td>TXBM001</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Emily</td>
+                            <td>Financial Analyst</td>
+                            <td>Finance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>emiller</td>
+                            <td>abc456</td>
+                            <td>TXBM002</td>
+                            <td>🟡 Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Chen, Lily</td>
+                            <td>Marketing Specialist</td>
+                            <td>Marketing</td>
+                            <td>Negros Occidental</td>
+                            <td>lchen</td>
+                            <td>qwerty</td>
+                            <td>TXBM003</td>
+                            <td>🔴 Denied</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson, Brian</td>
+                            <td>HR Manager</td>
+                            <td>Human Resources</td>
+                            <td>IT Park, Cebu</td>
+                            <td>bjohnson</td>
+                            <td>123pass</td>
+                            <td>TXBM004</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Lee, Katherine</td>
+                            <td>IT Specialist</td>
+                            <td>IT</td>
+                            <td>Negros Occidental</td>
+                            <td>klee</td>
+                            <td>lee123</td>
+                            <td>TXBM005</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Thomas, David</td>
+                            <td>Operations Manager</td>
+                            <td>Operations</td>
+                            <td>Leyte</td>
+                            <td>dthomas</td>
+                            <td>thomas456</td>
+                            <td>TXBM006</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Patricia</td>
+                            <td>Customer Service Rep</td>
+                            <td>Customer Service</td>
+                            <td>IT Park, Cebu</td>
+                            <td>pgonzalez</td>
+                            <td>welcome7</td>
+                            <td>TXBM007</td>
+                            <td>🟡 Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Wright, Christopher</td>
+                            <td>Software Engineer</td>
+                            <td>IT</td>
+                            <td>Leyte</td>
+                            <td>cwright</td>
+                            <td>pass123</td>
+                            <td>TXBM008</td>
+                            <td>🟡 Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Andrew</td>
+                            <td>Sales Representative</td>
+                            <td>Sales and Distribution</td>
+                            <td>Negros Occidental</td>
+                            <td>amiller</td>
+                            <td>abc123</td>
+                            <td>TXBM009</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Allen, Kevin</td>
+                            <td>Marketing Manager</td>
+                            <td>Marketing</td>
+                            <td>IT Park, Cebu</td>
+                            <td>kallen</td>
+                            <td>pass456</td>
+                            <td>TXBM010</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rachel</td>
+                            <td>Accountant</td>
+                            <td>Finance</td>
+                            <td>Negros Occidental</td>
+                            <td>rbrown</td>
+                            <td>brown123</td>
+                            <td>TXBM011</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Carlos</td>
+                            <td>Production Manager</td>
+                            <td>Production</td>
+                            <td>Leyte</td>
+                            <td>cgonzalez</td>
+                            <td>welcome12</td>
+                            <td>TXBM012</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Adams, Jennifer</td>
+                            <td>Research Analyst</td>
+                            <td>Research</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jadams</td>
+                            <td>adams456</td>
+                            <td>TXBM013</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Rodriguez, Sofia</td>
+                            <td>Project Manager</td>
+                            <td>Project Management</td>
+                            <td>Negros Occidental</td>
+                            <td>srodriguez</td>
+                            <td>123abc</td>
+                            <td>TXBM014</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Bell, Jonathan</td>
+                            <td>Quality Assurance Specialist</td>
+                            <td>Quality Assurance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>jbell</td>
+                            <td>bell123</td>
+                            <td>TXBM015</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson, Sarah</td>
+                            <td>HR Coordinator</td>
+                            <td>Human Resources</td>
+                            <td>IT Park, Cebu</td>
+                            <td>sarahj</td>
+                            <td>sarahpass</td>
+                            <td>TXBM016</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Nguyen, Minh</td>
+                            <td>Software Developer</td>
+                            <td>IT</td>
+                            <td>Leyte</td>
+                            <td>minhnguyen</td>
+                            <td>nguyen456</td>
+                            <td>TXBM017</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Gomez, Maria</td>
+                            <td>Customer Support Specialist</td>
+                            <td>Customer Service</td>
+                            <td>Negros Occidental</td>
+                            <td>mgomez</td>
+                            <td>gomez789</td>
+                            <td>TXBM018</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Chang, Michael</td>
+                            <td>Marketing Director</td>
+                            <td>Marketing</td>
+                            <td>IT Park, Cebu</td>
+                            <td>mchang</td>
+                            <td>changpass</td>
+                            <td>TXBM019</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Lopez, Juan</td>
+                            <td>Accounting Manager</td>
+                            <td>Finance</td>
+                            <td>Negros Occidental</td>
+                            <td>jlopez</td>
+                            <td>juan123</td>
+                            <td>TXBM020</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Kim, Eunji</td>
+                            <td>Graphic Designer</td>
+                            <td>Creative</td>
+                            <td>IT Park, Cebu</td>
+                            <td>ekim</td>
+                            <td>eunji456</td>
+                            <td>TXBM021</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Wong, David</td>
+                            <td>Operations Supervisor</td>
+                            <td>Operations</td>
+                            <td>Leyte</td>
+                            <td>davidw</td>
+                            <td>wongpass</td>
+                            <td>TXBM022</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Tran, Linh</td>
+                            <td>Sales Associate</td>
+                            <td>Sales and Distribution</td>
+                            <td>IT Park, Cebu</td>
+                            <td>linhtran</td>
+                            <td>linhpass</td>
+                            <td>TXBM023</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Lee, Seo-joon</td>
+                            <td>Customer Success Manager</td>
+                            <td>Customer Service</td>
+                            <td>Negros Occidental</td>
+                            <td>slee</td>
+                            <td>seojoon123</td>
+                            <td>TXBM024</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                        <tr>
+                            <td>Yamamoto, Yuki</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Quality Assurance</td>
+                            <td>IT Park, Cebu</td>
+                            <td>yyamamoto</td>
+                            <td>yuki456</td>
+                            <td>TXBM025</td>
+                            <td>🟢 Verified</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-responsive myTable taskAssignedTable" id="myTable3" style="display:none">
+                    <thead>
+                        <tr>
+                            <th>Assigned to</th>
+                            <th>Assigned by</th>
+                            <th>Task</th>
+                            <th>Task Number</th>
+                            <th>Nature of Task</th>
+                            <th>Due date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample data rows -->
+                        <tr>
+                            <td>Angelika Macasero</td>
+                            <td>Donna Egos</td>
+                            <td>Joined the marketing team</td>
+                            <td>00001</td>
+                            <td>Administration</td>
+                            <td>May 13, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Jamaica Duran</td>
+                            <td>Angelica Restauro</td>
+                            <td>Developed new marketing strategy, present findings to the team, Conduct market research..</td>
+                            <td>00002</td>
+                            <td>Marketing</td>
+                            <td>May 15, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <!-- Add more rows -->
+                        <tr>
+                            <td>Donna Egos</td>
+                            <td>Jamaica Duran</td>
+                            <td>Conduct market analysis, Prepare presentation for stakeholders..</td>
+                            <td>00003</td>
+                            <td>Research</td>
+                            <td>May 20, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Restauro</td>
+                            <td>Angelika Macasero</td>
+                            <td>Organize team meeting</td>
+                            <td>00004</td>
+                            <td>Administration</td>
+                            <td>May 17, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Angelika Macasero</td>
+                            <td>Donna Egos</td>
+                            <td>Review marketing campaign</td>
+                            <td>00005</td>
+                            <td>Marketing</td>
+                            <td>May 25, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Jamaica Duran</td>
+                            <td>Angelica Restauro</td>
+                            <td>Update project timeline</td>
+                            <td>00006</td>
+                            <td>Project Management</td>
+                            <td>May 19, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Egos</td>
+                            <td>Jamaica Duran</td>
+                            <td>Develop training materials, Conduct training sessions for team members.</td>
+                            <td>00007</td>
+                            <td>Training</td>
+                            <td>May 22, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Restauro</td>
+                            <td>Angelika Macasero</td>
+                            <td>Prepare budget proposal, Present proposal to finance committee.</td>
+                            <td>00008</td>
+                            <td>Finance</td>
+                            <td>May 18, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Angelika Macasero</td>
+                            <td>Donna Egos</td>
+                            <td>Research new marketing tools, Make recommendations to team.</td>
+                            <td>00009</td>
+                            <td>Research</td>
+                            <td>May 28, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Jamaica Duran</td>
+                            <td>Angelica Restauro</td>
+                            <td>Prepare project progress report, Share report with stakeholders.</td>
+                            <td>00010</td>
+                            <td>Reporting</td>
+                            <td>May 24, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-responsive myTable trainingTable" id="trainingTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Assigned to</th>
+                            <th>Nature of Training</th>
+                            <th>Training Type</th>
+                            <th>Training Subject</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample training data rows -->
+                        <tr>
+                            <td>Angelika Macasero</td>
+                            <td>Financial Reporting</td>
+                            <td>Internal</td>
+                            <td>Finance</td>
+                            <td>Advanced Financial Analysis</td>
+                            <td>May 16, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Egos</td>
+                            <td>Financial Reporting</td>
+                            <td>External</td>
+                            <td>Finance</td>
+                            <td>Introduction to Financial Management</td>
+                            <td>May 17, 2024</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Jamaica Duran</td>
+                            <td>Financial Reporting</td>
+                            <td>Internal</td>
+                            <td>Finance</td>
+                            <td>Financial Statement Analysis Workshop</td>
+                            <td>May 18, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Restauro</td>
+                            <td>Financial Reporting</td>
+                            <td>Internal</td>
+                            <td>Finance</td>
+                            <td>Corporate Finance Training</td>
+                            <td>May 19, 2024</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Angelika Macasero</td>
+                            <td>Financial Reporting</td>
+                            <td>External</td>
+                            <td>IT</td>
+                            <td>Introduction to Data Analytics</td>
+                            <td>May 20, 2024</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Egos</td>
+                            <td>Financial Reporting</td>
+                            <td>Internal</td>
+                            <td>Marketing</td>
+                            <td>Marketing Analytics Training</td>
+                            <td>May 21, 2024</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- Hidden modal card -->
+                <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="employeeDetails">
+                                <!-- Employee details will be dynamically inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+    </div>
+</div>
+<script>
+    let table = new DataTable('#myTable');
+</script>
+<script>
+  $(document).ready(function() {
+    $('#myTable').on('click', 'tr', function() {
+      // Get data from the clicked table row
+      var rowData = $(this).children('td').map(function() {
+        return $(this).text();
+      }).get();
+
+        // Get the row number
+        var rowNumber = parseInt(rowData[6].substring(4)); // Assuming the Employee ID format is "TXBMxxx"
+
+        // Construct the image URL
+        var imageUrl = `https://bootstrapdemos.adminmart.com/matdash/dist/assets/images/profile/user-${rowNumber}.jpg`;
+
+        // Construct HTML for employee details
+        var html = `
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <img src="${imageUrl}" class="img-fluid rounded-circle" alt="Employee Image" style="width: 150px; height: 150px;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <hr>
+      <h5>Personal Information</h5>
+      <hr>
+      <p><span class="font-weight-bold">Name:</span> <u>${rowData[0]}</u></p>
+      <p><span class="font-weight-bold">Date of Birth:</span> <u>January 1, 1980</u></p>
+      <hr>
+      <h5>Contact Information</h5>
+      <hr>
+       <p><span class="font-weight-bold">Email:</span> <u>${rowData[4]}@@example.com</u>
+        <p><span class="font-weight-bold">Phone Number:</span> <u>+1234567890</u>
+        <p><span class="font-weight-bold">Address:</span> <u>123 Main Street, City, Country</u>
+<hr>
+      <h5>Emergency Contact Number</h5>
+      <hr>
+        <p><span class="font-weight-bold">Name:</span> <u>Jane Smith</u>
+       <p><span class="font-weight-bold">Relationship:</span> <u>Spouse</u>
+        <p><span class="font-weight-bold">Phone Number:</span> <u>+1234567890</u>
+    </div>
+    <div class="col-md-6">
+      <hr>
+      <h5>Employment Details</h5>
+      <hr>
+      <p><span class="font-weight-bold">Job Title:</span> <u>${rowData[1]}</u></p>
+      <p><span class="font-weight-bold">Department:</span> <u>${rowData[2]}</u></p>
+      <p><span class="font-weight-bold">Station:</span> <u>${rowData[3]}</u></p>
+      <p><span class="font-weight-bold">Username:</span> <u>${rowData[4]}</u></p>
+      <p><span class="font-weight-bold">Access Code:</span> <u>${rowData[5]}</u></p>
+      <p><span class="font-weight-bold">Employee ID:</span> <u>${rowData[6]}</u></p>
+      <!-- Add other employment details fields here -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <hr>
+      <!-- Compensation and Benefits -->
+      <h5>Compensation and Benefits</h5>
+      <hr>
+      <p><span class="font-weight-bold">Salary:</span> <u>PHP 1,000,000 per year</u></p>
+      <p><span class="font-weight-bold">Benefits:</span> <u>Health Insurance, 401(k) plan</u></p>
+      <!-- Training Sessions -->
+      <hr>
+      <h5>Training Sessions</h5>
+      <hr>
+      <p>- Introduction to Company Policies and Procedures (May 16, 2024)</p>
+      <p>- Finance Orientation (May 17, 2024)</p>
+      <p>- Introduction to Financial Systems</p>
+    </div>
+    <div class="col-md-6">
+      <hr>
+      <!-- Technology and Equipment Setup -->
+      <h5>Technology and Equipment Setup</h5>
+      <hr>
+      <p><span class="font-weight-bold">IT Account Setup:</span> <u>Completed</u></p>
+      <p><span class="font-weight-bold">Assigned Equipment:</span> <u>Laptop, Access Card</u></p>
+      <!-- Work Authorization Information -->
+      <hr>
+      <h5>Work Authorization Information</h5>
+      <hr>
+      <p><span class="font-weight-bold">Work Visa Status:</span> <u>Permanent Resident</u></p>
+      <p><span class="font-weight-bold">Visa Expiry Date:</span> <u>N/A</u></p>
+      <!-- Acknowledgment and Agreement -->
+      <hr>
+      <h5>Acknowledgment and Agreement</h5>
+      <hr>
+      <p><span class="font-weight-bold">Policy Acknowledgment:</span> <u>Confirmed</u></p>
+      <p><span class="font-weight-bold">Agreements Signed:</span> <u>Confidentiality Agreement, Code of Conduct Agreement</u></p>
+      <!-- Status and Completion -->
+      <hr>
+      <h5>Status and Completion</h5>
+      <hr>
+      <p><u>All required information has been submitted and processed. John's onboarding process is complete.</u></p>
+    </div>
+  </div>
+`;
+
+
+
+
+
+      // Update modal content with employee details
+      $('#employeeDetails').html(html);
+
+      // Show the modal
+      $('#employeeModal').modal('show');
+    });
+  });
+</script>
+<script>
+    function showTable(tableName) {
+        // Set the title
+        var words = tableName.split(' ');
+        var capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+        var title = capitalizedWords.join(' ');
+        document.getElementById('tableTitle').innerText = title;
+
+
+
+        // Hide all tables
+        var tables = document.getElementsByClassName('myTable');
+        for (var i = 0; i < tables.length; i++) {
+            tables[i].style.display = 'none';
+        }
+
+        // Show the selected table
+        var selectedTable = document.getElementsByClassName(tableName + 'Table')[0];
+        if (selectedTable) {
+            selectedTable.style.display = 'block';
+        }
+    }
+
+</script>

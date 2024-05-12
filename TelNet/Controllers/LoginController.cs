@@ -23,6 +23,12 @@ namespace TelNet.Controllers
         }
 
         [AllowAnonymous]
+        public ActionResult CreateApplication()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(userCredentials u)
         {
@@ -48,15 +54,27 @@ namespace TelNet.Controllers
                     
                     Session["CurrentlyLoggedIn"] = user.username;
 
-                    if(userRoles.Contains("CEO"))
+                    if(userRoles.Contains("LALU"))
                     {
-                        return RedirectToAction("Dashboard", "Home");
+                        return RedirectToAction("CRM", "Home");
                     }
-                    else
+                    else if(userRoles.Contains("TU"))
                     { 
-                        return RedirectToAction("CRM", "Home"); 
+                        return RedirectToAction("HRMDashboard", "HRM"); 
                     }
-                    
+                    else if (userRoles.Contains("CAU"))
+                    {
+                        return RedirectToAction("RatePlans", "SDFICO");
+                    }
+                    else if (userRoles.Contains("MCU"))
+                    {
+                        return RedirectToAction("AccountStanding", "CCAS");
+                    }
+                    else if (userRoles.Contains("IAS"))
+                    {
+                        return RedirectToAction("Index", "DocumentManagement");
+                    }
+
                 }
                 else
                 {

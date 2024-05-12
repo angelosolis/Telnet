@@ -11,6 +11,7 @@
     <Property Name="telephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="serviceAvailed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="userApplications" Relationship="Self.FK_customerAccounts_customerAccounts" FromRole="customerAccounts" ToRole="userApplications" />
+    <Property Name="status" Type="Int32" />
   </EntityType>
   <EntityType Name="notificationLogs">
     <Key>
@@ -72,6 +73,10 @@
     <Property Name="eid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="status" Type="Int32" />
     <NavigationProperty Name="userRoles" Relationship="Self.FK_userRoles_userRoles" FromRole="userCredentials" ToRole="userRoles" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="userRoles">
     <Key>

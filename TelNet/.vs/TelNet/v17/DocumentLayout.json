@@ -3,12 +3,235 @@
   "WorkspaceRootPath": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\hrm\\hrmdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Angelo Solis\\AppData\\Local\\SourceServer\\34a4a9a597527ad17a76c4a51d45b8dc944205942f2789db2d1604dcf8dfb6a9\\BASE\\src\\Microsoft.ApplicationInsights\\Channel\\InMemoryTransmitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\_layoutdocument.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\_layoutdocument.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\trashsd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\trashsd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\trashhrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\trashhrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\trashfico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\trashfico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\trashcrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\trashcrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\trashcas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\trashcas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\trash.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\trash.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\sd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\sd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\hrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\hrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\fico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\fico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\crm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\crm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\documentmanagement\\cas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\documentmanagement\\cas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\home\\crm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\home\\crm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\ccas\\_layoutccas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\ccas\\_layoutccas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\ccas\\accountstanding.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\ccas\\accountstanding.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\home\\emailbodydenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\home\\emailbodydenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\home\\emailbodyapproved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\home\\emailbodyapproved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\ccas\\blacklistedsection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\ccas\\blacklistedsection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\_layoutsdfico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\_layoutsdfico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\ccas\\terminationsection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\ccas\\terminationsection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\ccas\\servicestanding.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\ccas\\servicestanding.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewproductcosts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewproductcosts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\controllers\\sdficocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:controllers\\sdficocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewassets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewassets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\controllers\\documentmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:controllers\\documentmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\controllers\\ccascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:controllers\\ccascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\ccas\\dataanalysis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\ccas\\dataanalysis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\hrmdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\hrmdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\views\\hrm\\_layouthrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\_layouthrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\_layouthrm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\controllers\\hrmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:controllers\\hrmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\management.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\management.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\invoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\invoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\modeltelnet.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:modeltelnet.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|c:\\users\\angelo solis\\documents\\solisangelo\\fileupload\\telnet\\telnet\\assets\\js\\app.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:assets\\js\\app.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\login\\createapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\login\\createapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\billdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\billdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\performance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\performance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewbanktransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewbanktransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\onboarding.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\onboarding.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\financialreports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\financialreports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\billingautomation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\billingautomation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\activeservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\activeservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewpayables.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewpayables.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewprofitcenters.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewprofitcenters.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewbudgets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewbudgets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewprofitabilityreports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewprofitabilityreports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewtaxtransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewtaxtransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\viewreceivables.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\viewreceivables.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\sdfico\\generalledger.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\sdfico\\generalledger.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\department.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\department.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\reportinganalysis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\reportinganalysis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\views\\hrm\\designation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68DC1B9C-181A-499C-91AE-9AAF60675BDE}|TelNet.csproj|solutionrelative:views\\hrm\\designation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,28 +245,756 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DocumentManagementController.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\DocumentManagementController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocumentManagementController.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\DocumentManagementController.cs",
+              "RelativeToolTip": "Controllers\\DocumentManagementController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAIwBAAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T16:04:54.516Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InMemoryTransmitter.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\AppData\\Local\\SourceServer\\34a4a9a597527ad17a76c4a51d45b8dc944205942f2789db2d1604dcf8dfb6a9\\BASE\\src\\Microsoft.ApplicationInsights\\Channel\\InMemoryTransmitter.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\34a4a9a597527ad17a76c4a51d45b8dc944205942f2789db2d1604dcf8dfb6a9\\BASE\\src\\Microsoft.ApplicationInsights\\Channel\\InMemoryTransmitter.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\AppData\\Local\\SourceServer\\34a4a9a597527ad17a76c4a51d45b8dc944205942f2789db2d1604dcf8dfb6a9\\BASE\\src\\Microsoft.ApplicationInsights\\Channel\\InMemoryTransmitter.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\34a4a9a597527ad17a76c4a51d45b8dc944205942f2789db2d1604dcf8dfb6a9\\BASE\\src\\Microsoft.ApplicationInsights\\Channel\\InMemoryTransmitter.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAMwHAAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T17:52:04.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TrashCRM.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashCRM.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\TrashCRM.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashCRM.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\TrashCRM.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:10:27.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrashFico.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashFico.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\TrashFico.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashFico.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\TrashFico.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:43:10.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrashHRM.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashHRM.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\TrashHRM.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashHRM.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\TrashHRM.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:43:15.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TrashSD.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashSD.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\TrashSD.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashSD.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\TrashSD.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:43:16.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Trash.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\Trash.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\Trash.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\Trash.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\Trash.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T16:31:27.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SD.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\SD.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\SD.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\SD.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\SD.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T16:23:39.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\Index.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\Index.cshtml",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAAABEBAAB8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:11:03.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LayoutDocument.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\_LayoutDocument.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\_LayoutDocument.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\_LayoutDocument.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\_LayoutDocument.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:44:21.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TrashCAS.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashCAS.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\TrashCAS.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\TrashCAS.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\TrashCAS.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:09:34.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HRM.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\HRM.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\HRM.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\HRM.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\HRM.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T16:23:28.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Fico.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\Fico.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\Fico.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\Fico.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\Fico.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T16:23:59.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CRM.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\CRM.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\CRM.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\CRM.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\CRM.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T16:23:52.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CAS.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\CAS.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocumentManagement\\CAS.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\DocumentManagement\\CAS.cshtml",
+              "RelativeToolTip": "Views\\DocumentManagement\\CAS.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T16:23:46.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CRM.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\CRM.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\CRM.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\CRM.cshtml",
+              "RelativeToolTip": "Views\\Home\\CRM.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:24:39.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountStanding.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\AccountStanding.cshtml",
+              "RelativeDocumentMoniker": "Views\\CCAS\\AccountStanding.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\AccountStanding.cshtml",
+              "RelativeToolTip": "Views\\CCAS\\AccountStanding.cshtml",
+              "ViewState": "AQIAABcAAAAAAAAAAAAYwCMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T12:52:50.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EmailBodyDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\EmailBodyDenied.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\EmailBodyDenied.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\EmailBodyDenied.cshtml",
+              "RelativeToolTip": "Views\\Home\\EmailBodyDenied.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAADwAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:43:06.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_LayoutCCAS.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\_LayoutCCAS.cshtml",
+              "RelativeDocumentMoniker": "Views\\CCAS\\_LayoutCCAS.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\_LayoutCCAS.cshtml",
+              "RelativeToolTip": "Views\\CCAS\\_LayoutCCAS.cshtml",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAewKQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T12:45:36.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EmailBodyApproved.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\EmailBodyApproved.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\EmailBodyApproved.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\EmailBodyApproved.cshtml",
+              "RelativeToolTip": "Views\\Home\\EmailBodyApproved.cshtml",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAAAEwAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T17:13:48.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BlacklistedSection.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\BlacklistedSection.cshtml",
+              "RelativeDocumentMoniker": "Views\\CCAS\\BlacklistedSection.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\BlacklistedSection.cshtml",
+              "RelativeToolTip": "Views\\CCAS\\BlacklistedSection.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T14:49:28.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_LayoutSDFICO.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\_LayoutSDFICO.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\_LayoutSDFICO.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\_LayoutSDFICO.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\_LayoutSDFICO.cshtml",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAAEEAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T03:48:01.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TerminationSection.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\TerminationSection.cshtml",
+              "RelativeDocumentMoniker": "Views\\CCAS\\TerminationSection.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\TerminationSection.cshtml",
+              "RelativeToolTip": "Views\\CCAS\\TerminationSection.cshtml",
+              "ViewState": "AQIAABcAAAAAAAAAAAAowDEAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T14:49:20.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ServiceStanding.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\ServiceStanding.cshtml",
+              "RelativeDocumentMoniker": "Views\\CCAS\\ServiceStanding.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\ServiceStanding.cshtml",
+              "RelativeToolTip": "Views\\CCAS\\ServiceStanding.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T14:49:08.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ViewProductCosts.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewProductCosts.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewProductCosts.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewProductCosts.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewProductCosts.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:11:05.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SDFICOController.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\SDFICOController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SDFICOController.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\SDFICOController.cs",
+              "RelativeToolTip": "Controllers\\SDFICOController.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAIA5wGAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T03:20:47.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ViewAssets.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewAssets.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewAssets.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewAssets.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewAssets.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:17.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAUwEoAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T11:28:29.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CCASController.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\CCASController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CCASController.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\CCASController.cs",
+              "RelativeToolTip": "Controllers\\CCASController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T11:18:02.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DataAnalysis.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\DataAnalysis.cshtml",
+              "RelativeDocumentMoniker": "Views\\CCAS\\DataAnalysis.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\CCAS\\DataAnalysis.cshtml",
+              "RelativeToolTip": "Views\\CCAS\\DataAnalysis.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T14:49:34.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "HRMDashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\HRMDashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\HRMDashboard.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\HRMDashboard.cshtml",
+              "RelativeToolTip": "Views\\HRM\\HRMDashboard.cshtml",
+              "ViewState": "AQIAAGgGAAAAAAAAAADwv3sGAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T12:16:16.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AQIAALMAAAAAAAAAAAAAwLwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T03:06:49.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "_LayoutHRM.cshtml",
               "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\_LayoutHRM.cshtml",
               "RelativeDocumentMoniker": "Views\\HRM\\_LayoutHRM.cshtml",
               "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\_LayoutHRM.cshtml",
               "RelativeToolTip": "Views\\HRM\\_LayoutHRM.cshtml",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAAKoAAAAZAAAA",
+              "ViewState": "AQIAAL8AAAAAAAAAAIAwwMsAAABqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-08T12:17:12.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HRMDashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\HRMDashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\HRM\\HRMDashboard.cshtml",
-              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\HRMDashboard.cshtml",
-              "RelativeToolTip": "Views\\HRM\\HRMDashboard.cshtml",
-              "ViewState": "AQIAAOMCAAAAAAAAAAAwwPACAAAKAAAA",
+              "DocumentIndex": 36,
+              "Title": "Invoice.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\Invoice.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\Invoice.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\Invoice.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\Invoice.cshtml",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAALcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-08T12:16:16.929Z",
+              "WhenOpened": "2024-05-12T10:25:59.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Repository\\BaseRepository.cs",
+              "RelativeToolTip": "Repository\\BaseRepository.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAYwAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T14:01:54.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Management.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Management.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\Management.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Management.cshtml",
+              "RelativeToolTip": "Views\\HRM\\Management.cshtml",
+              "ViewState": "AQIAAHoBAAAAAAAAAAAwwJEBAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-11T21:46:33.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HRMController.cs",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\HRMController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HRMController.cs",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Controllers\\HRMController.cs",
+              "RelativeToolTip": "Controllers\\HRMController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T12:53:16.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ModelTelnet.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\ModelTelnet.edmx",
+              "RelativeDocumentMoniker": "ModelTelnet.edmx",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\ModelTelnet.edmx [Diagram1]",
+              "RelativeToolTip": "ModelTelnet.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-05-12T13:30:01.04Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "app.min.js",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\assets\\js\\app.min.js",
+              "RelativeDocumentMoniker": "assets\\js\\app.min.js",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\assets\\js\\app.min.js",
+              "RelativeToolTip": "assets\\js\\app.min.js",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAQwAwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-12T13:04:05.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CreateApplication.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Login\\CreateApplication.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\CreateApplication.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\Login\\CreateApplication.cshtml",
+              "RelativeToolTip": "Views\\Login\\CreateApplication.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAIBZwAwAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T11:30:43.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "BillDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\BillDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\BillDetails.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\BillDetails.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\BillDetails.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T06:52:33.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Announcements.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Announcements.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\Announcements.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Announcements.cshtml",
+              "RelativeToolTip": "Views\\HRM\\Announcements.cshtml",
+              "ViewState": "AQIAALsAAAAAAAAAAAAQwNEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T01:33:45.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Onboarding.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Onboarding.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\Onboarding.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Onboarding.cshtml",
+              "RelativeToolTip": "Views\\HRM\\Onboarding.cshtml",
+              "ViewState": "AQIAAFgDAAAAAAAAAABhwF8DAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-11T12:56:04.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ViewBankTransactions.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewBankTransactions.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewBankTransactions.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewBankTransactions.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewBankTransactions.cshtml",
+              "ViewState": "AQIAAEAAAAAAAAAAAADwvzsAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:24.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Performance.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Performance.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\Performance.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Performance.cshtml",
+              "RelativeToolTip": "Views\\HRM\\Performance.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAABhwAgBAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T01:14:22.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "FinancialReports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\FinancialReports.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\FinancialReports.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\FinancialReports.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\FinancialReports.cshtml",
+              "ViewState": "AQIAACsBAAAAAAAAAIBZwEoBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T08:20:05.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "BillingAutomation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\BillingAutomation.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\BillingAutomation.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\BillingAutomation.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\BillingAutomation.cshtml",
+              "ViewState": "AQIAANYAAAAAAAAAAIBZwPAAAAB3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T06:01:08.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ActiveServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ActiveServices.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ActiveServices.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ActiveServices.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ActiveServices.cshtml",
+              "ViewState": "AQIAALYAAAAAAAAAAIBZwM4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T10:16:24.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ViewPayables.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewPayables.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewPayables.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewPayables.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewPayables.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAIBZwBoAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:03.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ViewProfitCenters.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewProfitCenters.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewProfitCenters.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewProfitCenters.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewProfitCenters.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:51.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ViewBudgets.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewBudgets.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewBudgets.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewBudgets.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewBudgets.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:45.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "ViewProfitabilityReports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewProfitabilityReports.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewProfitabilityReports.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewProfitabilityReports.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewProfitabilityReports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:58.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ViewTaxTransactions.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewTaxTransactions.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewTaxTransactions.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewTaxTransactions.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewTaxTransactions.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:38.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "ViewReceivables.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewReceivables.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\ViewReceivables.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\ViewReceivables.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\ViewReceivables.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAIBZwEYAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:10:10.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "GeneralLedger.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\GeneralLedger.cshtml",
+              "RelativeDocumentMoniker": "Views\\SDFICO\\GeneralLedger.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\SDFICO\\GeneralLedger.cshtml",
+              "RelativeToolTip": "Views\\SDFICO\\GeneralLedger.cshtml",
+              "ViewState": "AQIAAHMAAAAAAAAAAABhwHoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T09:08:21.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Department.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Department.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\Department.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Department.cshtml",
+              "RelativeToolTip": "Views\\HRM\\Department.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T01:19:19.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ReportingAnalysis.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\ReportingAnalysis.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\ReportingAnalysis.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\ReportingAnalysis.cshtml",
+              "RelativeToolTip": "Views\\HRM\\ReportingAnalysis.cshtml",
+              "ViewState": "AQIAAFsBAAAAAAAAAIBZwHQBAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-11T23:00:45.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Designation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Designation.cshtml",
+              "RelativeDocumentMoniker": "Views\\HRM\\Designation.cshtml",
+              "ToolTip": "C:\\Users\\Angelo Solis\\Documents\\SolisAngelo\\FileUpload\\Telnet\\TelNet\\Views\\HRM\\Designation.cshtml",
+              "RelativeToolTip": "Views\\HRM\\Designation.cshtml",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAIwBcBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-12T01:19:30.362Z",
               "EditorCaption": ""
             }
           ]

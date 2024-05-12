@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewBag.Title = "ActiveServices";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Plans Interface</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        .container-fluid {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Account Number</th>
+                            <th>Service Plan</th>
+                            <th>Status</th>
+                            <th>Next Billing Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populate with fake customer data -->
+                        <tr>
+                            <td>John Doe</td>
+                            <td>123456</td>
+                            <td>FiberX Plan 200mbps - 1500</td>
+                            <td>Active</td>
+                            <td>2024-05-15</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('John Doe', '123456')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>789012</td>
+                            <td>FiberX Plan 400mbps - 2000</td>
+                            <td>Active</td>
+                            <td>2024-05-20</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Jane Smith', '789012')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Michael Johnson</td>
+                            <td>345678</td>
+                            <td>FiberX Plan 600mbps - 2500</td>
+                            <td>Active</td>
+                            <td>2024-05-18</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Michael Johnson', '345678')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alice Brown</td>
+                            <td>901234</td>
+                            <td>FiberX Plan 800mbps - 3500</td>
+                            <td>Active</td>
+                            <td>2024-05-22</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Alice Brown', '901234')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Robert Wilson</td>
+                            <td>567890</td>
+                            <td>FiberX Plan 1Gbps - 7499</td>
+                            <td>Active</td>
+                            <td>2024-05-25</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Robert Wilson', '567890')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Susan Taylor</td>
+                            <td>234567</td>
+                            <td>FiberX Time of Day 400mbps/200mbps</td>
+                            <td>Active</td>
+                            <td>2024-05-17</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Susan Taylor', '234567')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>David Martinez</td>
+                            <td>890123</td>
+                            <td>FiberX Time of Day 800mbps/600mbps</td>
+                            <td>Active</td>
+                            <td>2024-05-19</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('David Martinez', '890123')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Anderson</td>
+                            <td>456789</td>
+                            <td>FiberX Plan 1Gbps - 7499</td>
+                            <td>Active</td>
+                            <td>2024-05-21</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Jennifer Anderson', '456789')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Christopher Garcia</td>
+                            <td>012345</td>
+                            <td>FiberX Plan 1Gbps - 7499</td>
+                            <td>Active</td>
+                            <td>2024-05-24</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Christopher Garcia', '012345')">View History</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mary Lee</td>
+                            <td>678901</td>
+                            <td>FiberX Plan 1Gbps - 7499</td>
+                            <td>Active</td>
+                            <td>2024-05-26</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="showBillingHistoryModal('Mary Lee', '678901')">View History</button>
+                            </td>
+                            <!-- Add more rows for other customers -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Billing History -->
+    <div class="modal fade" id="billingHistoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Billing History for <span id="customerName"></span> (Account Number: <span id="accountNumber"></span>)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Invoice Number</th>
+                                <th>Date Generated</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="billingHistoryTableBody">
+                            <!-- Billing history will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="downloadBillingHistoryPDF()">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        function showBillingHistoryModal(customerName, accountNumber) {
+            $('#customerName').text(customerName);
+            $('#accountNumber').text(accountNumber);
+            $('#billingHistoryModal').modal('show');
+
+            // Generate fake billing history
+            var billingHistory = generateFakeBillingHistory();
+            displayBillingHistory(billingHistory);
+        }
+
+        function generateFakeBillingHistory() {
+            var billingHistory = [];
+            var numberOfInvoices = Math.floor(Math.random() * 5) + 1; // Generate between 1 to 5 invoices
+
+            for (var i = 1; i <= numberOfInvoices; i++) {
+                var invoiceNumber = Math.floor(Math.random() * 10000) + 1000; // Generate random 4-digit invoice number
+                var dateGenerated = randomDate(new Date(2023, 0, 1), new Date()); // Generate random date between 2022-01-01 and current date
+                var amount = (Math.random() * 5000 + 1250).toFixed(2); // Generate random amount between 50 and 550
+                var status = Math.random() < 0.5 ? 'Paid' : 'Unpaid'; // Randomly generate 'Paid' or 'Unpaid' status
+
+                billingHistory.push({
+                    invoiceNumber: invoiceNumber,
+                    dateGenerated: dateGenerated,
+                    amount: amount,
+                    status: status
+                });
+            }
+
+            return billingHistory;
+        }
+
+        function displayBillingHistory(billingHistory) {
+            var tbody = $('#billingHistoryTableBody');
+            tbody.empty();
+
+            billingHistory.forEach(function (invoice) {
+                var row = '<tr>' +
+                    '<td>' + invoice.invoiceNumber + '</td>' +
+                    '<td>' + formatDate(invoice.dateGenerated) + '</td>' +
+                    '<td>P' + invoice.amount + '</td>' +
+                    '<td>' + invoice.status + '</td>' +
+                    '</tr>';
+
+                tbody.append(row);
+            });
+        }
+
+        function downloadBillingHistoryPDF() {
+            const doc = new jsPDF();
+            doc.autoTable({ html: '#billingHistoryTable' });
+            doc.save('billing_history.pdf');
+        }
+
+        function randomDate(start, end) {
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+        }
+
+        function formatDate(date) {
+            var options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(date).toLocaleDateString('en-US', options);
+        }
+    </script>
+
+
+    <script>
+       
+
+        let table = new DataTable('#ratePlansTable');
+
+        function exportTable() {
+            const doc = new jsPDF();
+            doc.autoTable({ html: '#ratePlansTable' });
+            doc.save('ratePlans.pdf');
+        }
+    </script>
+</body>
+</html>

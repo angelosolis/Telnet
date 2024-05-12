@@ -20,6 +20,7 @@ namespace TelNet
         public string accountPassword { get; set; }
         public string telephoneNumber { get; set; }
         public string serviceAvailed { get; set; }
+        public Nullable<int> status { get; set; }
     
         public virtual userApplications userApplications { get; set; }
     }

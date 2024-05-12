@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "RatePlans";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Plans Interface</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        .container-fluid {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="button" class="btn btn-info" style="float: right" onclick="exportTable()">Export/Print</button>
+                <table class="table table-responsive" id="ratePlansTable">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Price</th>
+                            <th>Data Limit</th>
+                            <th>Validity Period</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratePlansTableBody">
+                        <tr>
+                            <td>Plan for Home</td>
+                            <td>FiberX Plan 200mbps - 1500</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Plan for Home</td>
+                            <td>FiberX Plan 400mbps - 2000</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Plan for Home</td>
+                            <td>FiberX Plan 600mbps - 2500</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Plan for Home</td>
+                            <td>FiberX Plan 800mbps - 3500</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Plan for Home</td>
+                            <td>FiberX Plan 1Gbps - 7499</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Plan for Business</td>
+                            <td>FiberX Time of Day 400mbps/200mbps</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Plan for Business</td>
+                            <td>FiberX Time of Day 800mbps/600mbps</td>
+                            <td>Unlimited</td>
+                            <td>Monthly</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        let table = new DataTable('#ratePlansTable');
+
+        function exportTable() {
+            const doc = new jsPDF();
+            doc.autoTable({ html: '#ratePlansTable' });
+            doc.save('ratePlans.pdf');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "GeneralLedger";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+
+<h2>GeneralLedger</h2>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- General Ledger Section -->
+                <div id="generalLedger">
+                    <h3>General Ledger</h3>
+                    <!-- View Transactions -->
+                    <div class="card mb-3">
+                        
+                        <div class="card-header">View Transactions:</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="dateRange">Date Range:</label>
+                                <input type="date" id="startDate" name="startDate"> <!-- Start Date -->
+                                <span class="mx-2">to</span>
+                                <input type="date" id="endDate" name="endDate"> <!-- End Date -->
+                            </div>
+                            <!-- Account Type Filter -->
+                            <div class="form-group" style="margin-top: 10px; margin-bottom: 10px">
+                                <label for="accountType">Account Type:</label>
+                                <select id="accountType" name="accountType" class="form-control">
+                                    <option value="all">All</option>
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
+                                    <option value="asset">Asset</option>
+                                    <option value="liability">Liability</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>  
+                            <table class="table" id="financialTable">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Account</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Fake data for transactions -->
+                                    <tr>
+                                        <td>2024-05-10</td>
+                                        <td>Payment from Kujo Satoru for FiberX 100mbps Plan</td>
+                                        <td>₱7,800</td>
+                                        <td>Accounts Receivable</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-05-12</td>
+                                        <td>Internet Subscription Fee for FiberX 200mbps Plan</td>
+                                        <td>₱1,500</td>
+                                        <td>Utilities</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-05-15</td>
+                                        <td>Consultation Fee for Network Configuration</td>
+                                        <td>₱3,000</td>
+                                        <td>Professional Fees</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-05-20</td>
+                                        <td>Equipment Purchase: New Servers for Network Expansion</td>
+                                        <td>₱10,000</td>
+                                        <td>Assets</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-05-25</td>
+                                        <td>Advertisement Expense for TeleX Promotional Campaign</td>
+                                        <td>₱2,500</td>
+                                        <td>Marketing</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-05-28</td>
+                                        <td>Monthly Salary for Network Technicians</td>
+                                        <td>₱15,000</td>
+                                        <td>Salaries</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-05-31</td>
+                                        <td>Equipment Maintenance: Router Maintenance</td>
+                                        <td>₱800</td>
+                                        <td>Maintenance</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Export Transactions -->
+                    <div class="card mb-3">
+                        <div class="card-header">Export Transactions:</div>
+                        <div class="card-body">
+                            <button id="exportCSV" class="btn btn-primary">Export to CSV</button>
+                            <button id="exportPDF" class="btn btn-primary">Export to PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+
+    let table = new DataTable('#financialTable');
+
+
+    // Function to export table data to CSV
+    function exportToCSV() {
+        // Get the table element
+        var table = document.getElementById('financialTable');
+
+        // Initialize empty CSV string
+        var csv = '';
+
+        // Loop through rows
+        for (var i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+
+            // Loop through cells in the row
+            for (var j = 0; j < row.cells.length; j++) {
+                // Add cell value to CSV string
+                csv += row.cells[j].innerText.trim() + ',';
+            }
+
+            // Add new line character after each row
+            csv += '\n';
+        }
+
+        // Initiate download
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var link = document.createElement('a');
+        if (link.download !== undefined) { // feature detection
+            var url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'financial_report.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+
+
+    // Function to export table data to PDF
+    function exportToPDF() {
+        // Initialize jsPDF
+        const doc = new jsPDF();
+
+        // Add table data to PDF
+        doc.autoTable({
+            html: '#financialTable'
+        });
+
+        // Save PDF
+        doc.save('financial_report.pdf');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add event listener to the element with the ID 'exportPDF'
+        var exportPDFButton = document.getElementById('exportPDF');
+        if (exportPDFButton) {
+            exportPDFButton.addEventListener('click', function () {
+                exportToPDF(); // Call exportToPDF function
+            });
+        }
+
+        // Add event listener to the element with the ID 'exportCSV'
+        var exportCSVButton = document.getElementById('exportCSV');
+        if (exportCSVButton) {
+            exportCSVButton.addEventListener('click', function () {
+                exportToCSV(); // Call exportToCSV function
+            });
+        }
+    });
+
+</script>
