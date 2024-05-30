@@ -1,0 +1,374 @@
+﻿@{
+    ViewBag.Title = "FinancialReports";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Financial Reports and Analysis Interface -->
+                <h2>FINANCIAL REPORTS AND ANALYSIS INTERFACE</h2>
+                <div id="dashboard">
+                    <!-- Dashboard Section -->
+                    <h3>Dashboard</h3>
+                    <!-- Key Metrics -->
+                    <div class="card mb-3">
+                        <div class="card-header">Key Metrics</div>
+                        <div class="card-body">
+                            <!-- Display total revenue, profit, outstanding payments, and other relevant financial KPIs -->
+                            <p>Total Revenue: ₱100,000</p>
+                            <p>Profit: ₱30,000</p>
+                            <p>Outstanding Payments: ₱10,000</p>
+                            <p>Revenue Growth Rate: 15%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Reports Section -->
+                <div id="financialReports">
+                    <h3>Financial Reports</h3>
+                    <!-- Report Selection Dropdown -->
+                    <div class="form-group">
+                        <label for="reportType">Report Selection:</label>
+                        <select class="form-control" id="reportType">
+                            <option value="revenue">Revenue</option>
+                            <option value="expenses">Expenses</option>
+                            <option value="profitability">Profitability</option>
+                            <!-- Add other report options as needed -->
+                        </select>
+                    </div>
+                    <!-- Report Display -->
+                    <div class="table-responsive">
+                        <!-- Tabular representation of financial data with options for sorting and exporting -->
+                        <table id="financialTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Amount (₱)</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-01-01</td>
+                                    <td>Internet Service</td>
+                                    <td>5000</td>
+                                    <td>Utilities</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-01-15</td>
+                                    <td>Hardware Purchase</td>
+                                    <td>20000</td>
+                                    <td>Equipment</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-02-05</td>
+                                    <td>Software Subscription</td>
+                                    <td>3000</td>
+                                    <td>Services</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-02-20</td>
+                                    <td>Office Rent</td>
+                                    <td>10000</td>
+                                    <td>Facilities</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-03-10</td>
+                                    <td>Marketing Campaign</td>
+                                    <td>8000</td>
+                                    <td>Marketing</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-03-25</td>
+                                    <td>Employee Salaries</td>
+                                    <td>15000</td>
+                                    <td>Human Resources</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-04-05</td>
+                                    <td>Consulting Fees</td>
+                                    <td>6000</td>
+                                    <td>Services</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-04-20</td>
+                                    <td>Insurance Payment</td>
+                                    <td>4000</td>
+                                    <td>Legal & Insurance</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Revenue Analysis Section -->
+                <div id="revenueAnalysis">
+                    <h3>Revenue Analysis</h3>
+                    <!-- Graphs -->
+                    <div class="card mb-3">
+                        <div class="card-header">Graphs</div>
+                        <div class="card-body">
+                            <!-- Visualize revenue trends over time, breakdown by product or service, and geographical distribution -->
+                            <!-- Add revenue analysis graphs here -->
+                            <canvas id="revenueAnalysisChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    <!-- Key Metrics -->
+                    <div class="card mb-3">
+                        <div class="card-header">Key Metrics</div>
+                        <div class="card-body">
+                            <p>Total Revenue: ₱300,000</p>
+                            <p>Revenue Growth Rate: 15%</p>
+                            <p>Top-Selling Products/Services:</p>
+                                <p>-Internet Service: ₱300,000</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Expense Analysis Section -->
+                <div id="expenseAnalysis">
+                    <h3>Expense Analysis</h3>
+                    <!-- Expense Categories Pie Chart -->
+                    <div class="card mb-3">
+                        <div class="card-header">Expense Categories</div>
+                        <div class="card-body">
+                            <!-- Pie chart showing the breakdown of expenses by category -->
+                            <!-- Add expense categories pie chart here -->
+                            <canvas id="expenseAnalysisChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    <!-- Expense Trends Graph -->
+                    <div class="card mb-3">
+                        <div class="card-header">Expense Trends</div>
+                        <div class="card-body">
+                            <!-- Graph displaying monthly or quarterly expense trends -->
+                            <canvas id="expenseTrendsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profitability Analysis Section -->
+                <div id="profitabilityAnalysis">
+                    <h3>Profitability Analysis</h3>
+                    <!-- Profit Margin Display -->
+                    <div class="card mb-3">
+                        <div class="card-header">Profit Margin</div>
+                        <div class="card-body">
+                            <!-- Display overall profit margin and profit margin by product/service -->
+                            <p>Overall Profit Margin: 20%</p>
+                            <p>Profit Margin by Product/Service:</p>
+                            <ul>
+                                <li>Internet Service: 25%</li>
+                                <li>Hardware Sales: 18%</li>
+                                <!-- Add more profit margin data as needed -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Cost Analysis -->
+                    <div class="card mb-3">
+                        <div class="card-header">Cost Analysis</div>
+                        <div class="card-body">
+                            <!-- Comparing the cost of goods sold (COGS) with revenue to calculate gross profit -->
+                            <p>Cost of Goods Sold (COGS): ₱200,000</p>
+                            <p>Gross Profit: ₱300,000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customization Options Section -->
+                <div id="customizationOptions">
+                    <h3>Customization Options</h3>
+                    <!-- Date Range Selection -->
+                    <div class="form-group">
+                        <label for="dateRange">Date Range Selection:</label>
+                        <select class="form-control" id="dateRange">
+                            <option value="lastMonth">Last Month</option>
+                            <option value="lastQuarter">Last Quarter</option>
+                            <!-- Add more date range options as needed -->
+                        </select>
+                    </div>
+                    <!-- Chart Preferences -->
+                    <div class="form-group">
+                        <label for="chartType">Chart Preferences:</label>
+                        <select class="form-control" id="chartType">
+                            <option value="lineChart">Line Chart</option>
+                            <option value="barChart">Bar Chart</option>
+                            <option value="pieChart">Pie Chart</option>
+                            <!-- Add more chart type options as needed -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Export and Sharing Section -->
+                <div id="exportSharing">
+                    <h3>Export and Sharing</h3>
+                    <!-- Export Functionality Buttons -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary" id="exportPDF">Export as PDF</button>
+                        <button type="button" class="btn btn-primary" id="exportExcel">Export as Excel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Generate random data for the expense trends graph
+    const months = ['January', 'February', 'March', 'April'];
+    const expensesData = [50000, 60000, 55000, 70000]; // Example data for expenses
+
+    // Create expense trends chart
+    const ctx = document.getElementById('expenseTrendsChart').getContext('2d');
+    const expenseTrendsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: months,
+            datasets: [{
+                label: 'Expenses',
+                data: expensesData,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+<script>
+    // Generate random data for the revenue trends graph
+    const revenueData = [60000, 70000, 75000, 80000]; // Example data for revenue
+
+    // Create revenue trends chart
+    const revenueCtx = document.getElementById('revenueTrendsChart').getContext('2d');
+    const revenueTrendsChart = new Chart(revenueCtx, {
+        type: 'line',
+        data: {
+            labels: months,
+            datasets: [{
+                label: 'Revenue',
+                data: revenueData,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+<script>
+    // Generate random data for the profit margin pie chart
+    const profitMarginData = [30, 40, 20, 10]; // Example data for profit margin by product/service
+    const productNames = ['Product A', 'Product B', 'Product C', 'Product D'];
+
+    // Create profit margin pie chart
+    const profitMarginCtx = document.getElementById('profitMarginPieChart').getContext('2d');
+    const profitMarginPieChart = new Chart(profitMarginCtx, {
+        type: 'pie',
+        data: {
+            labels: productNames,
+            datasets: [{
+                data: profitMarginData,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)'
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
+</script>
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+    $(document).ready(function () {
+        // Handle export as PDF button click
+        $('#exportPDF').on('click', function () {
+            const doc = new jsPDF();
+            doc.text('Financial Report', 10, 10);
+            doc.save('financial_report.pdf');
+        });
+
+        // Handle export as Excel button click
+        $('#exportExcel').on('click', function () {
+            // Add code to export as Excel
+            // This could be a placeholder function
+            alert('Exporting as Excel...');
+        });
+
+        // Revenue Analysis Chart
+        var revenueAnalysisChart = new Chart(document.getElementById('revenueAnalysisChart'), {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [10000, 12000, 15000, 18000],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Expense Analysis Chart
+        var expenseAnalysisChart = new Chart(document.getElementById('expenseAnalysisChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Salaries', 'Utilities', 'Marketing'],
+                datasets: [{
+                    label: 'Expense Categories',
+                    data: [3000, 2000, 1500],
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
+                    borderWidth: 1
+                }]
+            }
+        });
+    });
+</script>

@@ -10,7 +10,30 @@
     <Property Name="accountPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="telephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="serviceAvailed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
     <NavigationProperty Name="userApplications" Relationship="Self.FK_customerAccounts_customerAccounts" FromRole="customerAccounts" ToRole="userApplications" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FolderId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Folders" Relationship="Self.FK_File_Folder" FromRole="Files" ToRole="Folders" />
+  </EntityType>
+  <EntityType Name="Folders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ParentFolderId" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Files" Relationship="Self.FK_File_Folder" FromRole="Folders" ToRole="Files" />
+    <NavigationProperty Name="Folders1" Relationship="Self.FK_Folder_ParentFolder" FromRole="Folders" ToRole="Folders1" />
+    <NavigationProperty Name="Folders2" Relationship="Self.FK_Folder_ParentFolder" FromRole="Folders1" ToRole="Folders" />
   </EntityType>
   <EntityType Name="notificationLogs">
     <Key>
@@ -71,6 +94,10 @@
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="eid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="status" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="userRoles" Relationship="Self.FK_userRoles_userRoles" FromRole="userCredentials" ToRole="userRoles" />
   </EntityType>
   <EntityType Name="userRoles">
@@ -102,6 +129,30 @@
       </Principal>
       <Dependent Role="customerAccounts">
         <PropertyRef Name="applicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_File_Folder">
+    <End Role="Folders" Type="Self.Folders" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="FolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folder_ParentFolder">
+    <End Role="Folders" Type="Self.Folders" Multiplicity="0..1" />
+    <End Role="Folders1" Type="Self.Folders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Folders1">
+        <PropertyRef Name="ParentFolderId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -149,6 +200,8 @@
   </Association>
   <EntityContainer Name="TelnetDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="customerAccounts" EntityType="Self.customerAccounts" />
+    <EntitySet Name="Files" EntityType="Self.Files" />
+    <EntitySet Name="Folders" EntityType="Self.Folders" />
     <EntitySet Name="notificationLogs" EntityType="Self.notificationLogs" />
     <EntitySet Name="roles" EntityType="Self.roles" />
     <EntitySet Name="userApplications" EntityType="Self.userApplications" />
@@ -158,6 +211,14 @@
     <AssociationSet Name="FK_customerAccounts_customerAccounts" Association="Self.FK_customerAccounts_customerAccounts">
       <End Role="userApplications" EntitySet="userApplications" />
       <End Role="customerAccounts" EntitySet="customerAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_File_Folder" Association="Self.FK_File_Folder">
+      <End Role="Folders" EntitySet="Folders" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Folder_ParentFolder" Association="Self.FK_Folder_ParentFolder">
+      <End Role="Folders" EntitySet="Folders" />
+      <End Role="Folders1" EntitySet="Folders" />
     </AssociationSet>
     <AssociationSet Name="FK__notificat__appli__5812160E" Association="Self.FK__notificat__appli__5812160E">
       <End Role="userApplications" EntitySet="userApplications" />

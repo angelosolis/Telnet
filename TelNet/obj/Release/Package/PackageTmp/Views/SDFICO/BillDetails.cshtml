@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "BillDetails";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+
+
+<h2>Announcements</h2>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
+    <style>
+        td, th {
+            text-align: center;
+        }
+
+        .performanceReportTable th:nth-child(n+3),
+        .performanceReportTable td:nth-child(n+3) {
+            padding: 5px; /* Adjust the padding value as needed */
+        }
+    </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <table id="billTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>Bill ID</th>
+                            <th>Customer Name</th>
+                            <th>Service Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billTableBody">
+                        <tr>
+                            <td>545431</td>
+                            <td>Kujo Satoru</td>
+                            <td>Internet</td>
+                            <td>P1699.00</td>
+                            <td>2/16/2024</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#billModal" onclick="showBillDetails('${billId}')">View Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>435456</td>
+                            <td>Dada Satoru</td>
+                            <td>Internet</td>
+                            <td>P1699.00</td>
+                            <td>2/16/2024</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#billModal" onclick="showBillDetails('${billId}')">View Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>123542</td>
+                            <td>Mama Satoru</td>
+                            <td>Internet</td>
+                            <td>P1699.00</td>
+                            <td>2/16/2024</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#billModal" onclick="showBillDetails('${billId}')">View Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>876234</td>
+                            <td>Lala Satoru</td>
+                            <td>Internet</td>
+                            <td>P1699.00</td>
+                            <td>2/16/2024</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#billModal" onclick="showBillDetails('${billId}')">View Details</button>
+                            </td>
+                        </tr>
+
+
+</table>
+
+                <!-- Modal -->
+                <div id="billModal" class="modal fade">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Bill Details</h5>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="billDetails" class="modal-section"></div>
+                                <div id="invoiceGeneration" class="modal-section"></div>
+                                <div id="paymentManagement" class="modal-section"></div>
+                                <div id="billPrinting" class="modal-section"></div>
+                                <div id="billingHistory" class="modal-section"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="fakeSweetAlert('Email Invoice')">Email Invoice</button>
+                                <button type="button" class="btn btn-primary" onclick="fakeSweetAlert('Print Invoice')">Print Invoice</button>
+                                <button type="button" class="btn btn-primary" onclick="fakeSweetAlert('Save as PDF')">Save as PDF</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let table = new DataTable('#billTable');
+
+    function fakeSweetAlert(action) {
+        let message = "";
+
+        // Determine the message based on the action
+        switch (action) {
+            case "Email Invoice":
+                message = "The invoice has been sent to the customer.";
+                break;
+            case "Print Invoice":
+                message = "Successfully printed the invoice.";
+                break;
+            case "Save as PDF":
+                message = "Successfully saved the invoice.";
+                break;
+            default:
+                message = "Action completed.";
+                break;
+        }
+
+        // Display the SweetAlert message
+        Swal.fire({
+            title: "Success!",
+            text: message,
+            icon: "success",
+            confirmButtonText: "OK",
+        });
+    }
+
+
+    // Generate random bills
+    function generateRandomBills(numBills) {
+        const billTableBody = document.getElementById('billTableBody');
+
+        for (let i = 0; i < numBills; i++) {
+            const billId = generateRandomId();
+            const customerName = generateRandomName();
+            const serviceName = generateRandomService();
+            const amount = generateRandomAmount();
+            const date = generateRandomDate();
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+      <td class="dt-type-numeric sorting_1">${billId}</td>
+      <td>${customerName}</td>
+      <td>${serviceName}</td>
+      <td>${amount}</td>
+      <td>${date}</td>
+      <td>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#billModal" onclick="showBillDetails('${billId}')">View Details</button>
+      </td>
+    `;
+
+            billTableBody.appendChild(row);
+        }
+    }
+
+    // Show bill details in the modal
+    function showBillDetails(billId) {
+        // Retrieve bill details based on the billId
+        const billDetails = retrieveBillDetails(billId);
+
+        // Populate the modal with the bill details
+        const billDetailsElement = document.getElementById('billDetails');
+        billDetailsElement.innerHTML = `
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Customer Information:</strong>
+      <hr>
+      <p>Customer Name: ${billDetails.customerName}</p>
+      <p>Customer ID: ${billDetails.customerId}</p>
+      <p>Billing Address: ${billDetails.billingAddress}</p>
+      <hr>
+      <strong>Service Details:</strong>
+      <hr>
+      <p>Service ID: ${billDetails.serviceId}</p>
+      <p>Service Name: ${billDetails.serviceName}</p>
+      <p>Package: ${billDetails.package}</p>
+      <p>Start Date: ${billDetails.startDate}</p>
+      <p>End Date: ${billDetails.endDate}</p>
+      <hr>
+    </div>
+    <div class="col-md-6">
+      <strong>Charges:</strong>
+      <hr>
+      <p>Initiation Charge: ${billDetails.initiationCharge}</p>
+      <p>Periodic Charge: ${billDetails.periodicCharge}</p>
+      <p>Additional Charges: ${billDetails.additionalCharges}</p>
+      <hr>
+      <strong>Total Amount Due: ${billDetails.totalAmountDue}</strong>
+      <hr>
+    </div>
+  </div>
+`;
+
+    }
+
+    // Example function to retrieve bill details based on billId
+    function retrieveBillDetails(billId) {
+        // Replace this with your own logic to retrieve the bill details
+        // based on the provided billId
+        // Return an object containing the bill details
+        return {
+            customerName: 'John Doe',
+            customerId: '498512',
+            billingAddress: '123 Main St, City',
+            serviceId: '789012',
+            serviceName: 'Internet Plan 200mbps',
+            package: 'FiberX Plan 200mbps',
+            startDate: '2024-04-01',
+            endDate: '2024-04-30',
+            initiationCharge: 'P1500',
+            periodicCharge: 'P99',
+            additionalCharges: 'P100',
+            totalAmountDue: 'P1699.00',
+        };
+    }
+
+    // Generate a random alphanumeric ID
+    function generateRandomId() {
+        return Math.random().toString(36).substring(2, 8);
+    }
+
+    // Generate a random customer name
+    function generateRandomName() {
+        const names = ['John Doe', 'Jane Smith', 'Robert Johnson', 'Lisa Davis', 'Michael Wilson'];
+        return names[Math.floor(Math.random() * names.length)];
+    }
+
+    // Generate a random service name
+    function generateRandomService() {
+        const services = ['Internet', 'Internet', 'Internet', 'Internet'];
+        return services[Math.floor(Math.random() * services.length)];
+    }
+
+    // Generate a random amount
+    function generateRandomAmount() {
+        return 'P1699.00';
+    }
+
+    // Generate a random date
+    function generateRandomDate() {
+        const start = new Date(2021, 0, 1);
+        const end = new Date();
+        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toLocaleDateString();
+    }
+
+    // Call the function to generate random bills
+    generateRandomBills(3);
+</script>

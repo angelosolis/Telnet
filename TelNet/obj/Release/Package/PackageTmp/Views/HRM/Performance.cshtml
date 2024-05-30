@@ -1,0 +1,320 @@
+﻿
+@{
+    ViewBag.Title = "Performance";
+    Layout = "~/Views/HRM/_LayoutHRM.cshtml";
+}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        td, th {
+            text-align: center;
+        }
+
+        .performanceReportTable th:nth-child(n+3),
+        .performanceReportTable td:nth-child(n+3) {
+            padding: 5px; /* Adjust the padding value as needed */
+        }
+    </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <a href="#" class="btn btn-outline-primary" onclick="showTable('monthlyPerformance')">Monthly Performance</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href="#" class="btn btn-outline-primary" onclick="showTable('performanceReport')">Performance Report</a>
+                    </div>
+                </div>
+                <hr />
+                <h4 id="tableTitle" style="text-align: center">Monthly Performance</h4>
+                <br />
+                <table class="table table-responsive myTable monthlyPerformanceTable" style="display: table;">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Manager</th>
+                            <th>Shift</th>
+                            <th>Performance Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TXBM001</td>
+                            <td>Alex Smith</td>
+                            <td>Angelika Macasero</td>
+                            <td>Day Shift</td>
+                            <td>4 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM002</td>
+                            <td>Emily Miller</td>
+                            <td>Donna Egos</td>
+                            <td>Night Shift</td>
+                            <td>3 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM003</td>
+                            <td>Lily Chen</td>
+                            <td>Jamaica Duran</td>
+                            <td>Day Shift</td>
+                            <td>5 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM004</td>
+                            <td>Brian Johnson</td>
+                            <td>Angelica Restauro</td>
+                            <td>Night Shift</td>
+                            <td>4 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM005</td>
+                            <td>Katherine Lee</td>
+                            <td>Angelika Macasero</td>
+                            <td>Day Shift</td>
+                            <td>4 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM006</td>
+                            <td>David Thomas</td>
+                            <td>Donna Egos</td>
+                            <td>Night Shift</td>
+                            <td>3 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM007</td>
+                            <td>Patricia Gonzalez</td>
+                            <td>Jamaica Duran</td>
+                            <td>Day Shift</td>
+                            <td>5 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM008</td>
+                            <td>Christopher Wright</td>
+                            <td>Angelica Restauro</td>
+                            <td>Night Shift</td>
+                            <td>4 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM009</td>
+                            <td>Andrew Miller</td>
+                            <td>Angelika Macasero</td>
+                            <td>Day Shift</td>
+                            <td>4 out of 5</td>
+                        </tr>
+                        <tr>
+                            <td>TXBM010</td>
+                            <td>Kevin Allen</td>
+                            <td>Donna Egos</td>
+                            <td>Night Shift</td>
+                            <td>3 out of 5</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+
+
+                <table class="table table-responsive myTable performanceReportTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Jan</th>
+                            <th>Feb</th>
+                            <th>Mar</th>
+                            <th>Apr</th>
+                            <th>May</th>
+                            <th>Jun</th>
+                            <th>Jul</th>
+                            <th>Aug</th>
+                            <th>Sep</th>
+                            <th>Oct</th>
+                            <th>Nov</th>
+                            <th>Dec</th>
+                            <th>Total Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TXBM001</td>
+                            <td>John Smith</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>8</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TXBM002</td>
+                            <td>Emily Miller</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>8</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TXBM003</td>
+                            <td>Lily Chen</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>8</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TXBM004</td>
+                            <td>Brian Johnson</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>8</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TXBM005</td>
+                            <td>Katherine Lee</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>8</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>9</td>
+                            <td contenteditable>7</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td contenteditable>0</td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+
+                <!-- Hidden modal card -->
+                <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="employeeDetails">
+                                <!-- Employee details will be dynamically inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let table = new DataTable('#myTable');
+</script>
+<script>
+    function showTable(tableName) {
+        // Set the title
+        var title = tableName.replace(/([A-Z])/g, ' $1').trim();
+        // Add space before capital letters and trim any leading/trailing spaces
+        title = title.charAt(0).toUpperCase() + title.slice(1); // Capitalize the first letter
+        document.getElementById('tableTitle').innerText = title;
+
+
+
+        // Hide all tables
+        var tables = document.getElementsByClassName('myTable');
+        for (var i = 0; i < tables.length; i++) {
+            tables[i].style.display = 'none';
+        }
+
+        // Show the selected table
+        var selectedTable = document.getElementsByClassName(tableName + 'Table')[0];
+        if (selectedTable) {
+            selectedTable.style.display = 'table';
+        }
+    }
+
+</script>
+<script>
+    // Function to calculate the total rating for each employee
+    function calculateTotal() {
+        // Loop through each row in the table
+        var table = document.querySelector('.performanceReportTable');
+        var rows = table.querySelectorAll('tbody tr');
+
+        rows.forEach(function (row) {
+            var total = 0;
+            var cells = row.querySelectorAll('td[contenteditable]');
+
+            // Loop through each editable cell in the row and sum up the ratings
+            cells.forEach(function (cell) {
+                var rating = parseInt(cell.textContent.trim()) || 0;
+                total += rating;
+            });
+
+            // Update the total rating cell for the current row
+            var totalCell = row.querySelector('td:last-child');
+            totalCell.textContent = total;
+        });
+    }
+
+    // Bind event listeners to the editable cells to recalculate total on change
+    document.addEventListener('input', function (event) {
+        if (event.target.matches('.performanceReportTable td[contenteditable]')) {
+            calculateTotal();
+        }
+    });
+
+    // Call the calculateTotal function when the page loads
+    window.onload = function () {
+        calculateTotal();
+    };
+</script>

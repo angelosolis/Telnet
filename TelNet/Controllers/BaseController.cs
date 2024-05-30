@@ -17,6 +17,8 @@ namespace TelNet.Controllers
         public BaseRepository<userApplications> _userApplicationsRepo;
         public BaseRepository<notificationLogs> _notificationRepo;
         public BaseRepository<customerAccounts> _customerAccountsRepo;
+        public BaseRepository<Folders> _foldersRepo;
+        public BaseRepository<Files> _filesRepo;
 
         public BaseController()
         {
@@ -26,6 +28,8 @@ namespace TelNet.Controllers
             _userApplicationsRepo = new BaseRepository<userApplications>();
             _notificationRepo = new BaseRepository<notificationLogs>();
             _customerAccountsRepo = new BaseRepository<customerAccounts>();
+            _foldersRepo = new BaseRepository<Folders>();
+            _filesRepo = new BaseRepository<Files>();
         }
 
     }

@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "BudgetingMonitoring";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Budgeting Monitoring Section -->
+                <div id="budgetingMonitoring">
+                    <h3>Budgeting Monitoring</h3>
+                    <!-- View Budgets -->
+                    <div class="card mb-3">
+                        <div class="card-header">View Budgets</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Budget ID</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Remaining</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Fake data for budgets -->
+                                    <tr>
+                                        <td>Budget-001</td>
+                                        <td>Marketing Expenses</td>
+                                        <td>₱50,000</td>
+                                        <td>₱30,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Budget-002</td>
+                                        <td>Network Expansion</td>
+                                        <td>₱100,000</td>
+                                        <td>₱20,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Budget-003</td>
+                                        <td>Employee Salaries</td>
+                                        <td>₱200,000</td>
+                                        <td>₱150,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Budget-004</td>
+                                        <td>Equipment Maintenance</td>
+                                        <td>₱30,000</td>
+                                        <td>₱10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Budget-005</td>
+                                        <td>Software Licenses</td>
+                                        <td>₱20,000</td>
+                                        <td>₱5,000</td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Filter Budgets -->
+                    <div class="card mb-3">
+                        <div class="card-header">Filter Budgets</div>
+                        <div class="card-body">
+                            <!-- Date Range Filter -->
+                            <div class="form-group">
+                                <label for="dateRange">Date Range:</label>
+                                <input type="date" id="startDate" name="startDate"> <!-- Start Date -->
+                                <span class="mx-2">to</span>
+                                <input type="date" id="endDate" name="endDate"> <!-- End Date -->
+                            </div>
+                            <!-- Department Filter -->
+                            <div class="form-group">
+                                <label for="department">Department:</label>
+                                <select id="department" name="department" class="form-control">
+                                    <option value="all">All</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="network">Network</option>
+                                    <option value="finance">Finance</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Export Budgets -->
+                    <div class="card mb-3">
+                        <div class="card-header">Export Budgets</div>
+                        <div class="card-body">
+                            <button class="btn btn-primary" onclick="exportToCSV()">Export to CSV</button>
+                            <button class="btn btn-primary" onclick="exportToPDF()">Export to PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+    // Function to export table data to CSV
+    function exportToCSV() {
+        // Get the table element
+        var table = document.querySelector('#budgetingMonitoring table');
+
+        // Initialize empty CSV string
+        var csv = '';
+
+        // Loop through rows
+        for (var i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+
+            // Loop through cells in the row
+            for (var j = 0; j < row.cells.length; j++) {
+                // Add cell value to CSV string
+                csv += row.cells[j].innerText.trim() + ',';
+            }
+
+            // Add new line character after each row
+            csv += '\n';
+        }
+
+        // Initiate download
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var link = document.createElement('a');
+        if (link.download !== undefined) { // feature detection
+            var url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'budgets.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+
+    // Function to export table data to PDF
+    function exportToPDF() {
+        // Initialize jsPDF
+        const doc = new jsPDF();
+
+        // Add table data to PDF
+        doc.autoTable({
+            html: '#budgetingMonitoring table'
+        });
+
+        // Save PDF
+        doc.save('budgets.pdf');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add event listener to the element with the ID 'exportPDF'
+        var exportPDFButton = document.getElementById('exportPDF');
+        if (exportPDFButton) {
+            exportPDFButton.addEventListener('click', function () {
+                exportToPDF(); // Call exportToPDF function
+            });
+        }
+
+        // Add event listener to the element with the ID 'exportCSV'
+        var exportCSVButton = document.getElementById('exportCSV');
+        if (exportCSVButton) {
+            exportCSVButton.addEventListener('click', function () {
+                exportToCSV(); // Call exportToCSV function
+            });
+        }
+    });
+
+</script>

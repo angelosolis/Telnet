@@ -182,46 +182,52 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SDFICOController.cs" />
     <Compile Include="customerAccounts.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Files.cs">
+      <DependentUpon>TelnetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Folders.cs">
+      <DependentUpon>TelnetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ModelTelnet.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTelnet.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelTelnet.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelTelnet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTelnet.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MyRoles.cs" />
     <Compile Include="notificationLogs.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="roles.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelnetModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TelnetModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelnetModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelnetModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TelnetModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="userApplications.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="userCredentials.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="userRoles.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vw_UserRole.cs">
-      <DependentUpon>ModelTelnet.tt</DependentUpon>
+      <DependentUpon>TelnetModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1148,16 +1154,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ModelTelnet.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelTelnet.edmx</DependentUpon>
-      <LastGenOutput>ModelTelnet.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelTelnet.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelTelnet.edmx</DependentUpon>
-      <LastGenOutput>ModelTelnet.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -1461,13 +1457,6 @@
     <Content Include="Content\LoginCSS\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="css\style.css.map" />
     <Content Include="css\style.scss" />
-    <EntityDeploy Include="ModelTelnet.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelTelnet.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ModelTelnet.edmx.diagram">
-      <DependentUpon>ModelTelnet.edmx</DependentUpon>
-    </Content>
     <Content Include="assets\css\icons\tabler-icons\fonts\tabler-icons.eot" />
     <Content Include="assets\css\icons\tabler-icons\fonts\tabler-icons.ttf" />
     <Content Include="assets\css\icons\tabler-icons\fonts\tabler-icons.woff" />
@@ -1767,8 +1756,11 @@
     <Content Include="assets\scss\utilities\_icon-size.scss" />
     <Content Include="assets\scss\variables\_theme-variables.scss" />
     <Content Include="assets\scss\variables\_variables.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\telexcompany-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\telexcompany-001-site1 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\telexcompany-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\telexcompany-001-site1 - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1780,6 +1772,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="TelnetModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TelnetModel.edmx</DependentUpon>
+      <LastGenOutput>TelnetModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TelnetModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TelnetModel.edmx</DependentUpon>
+      <LastGenOutput>TelnetModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1847,6 +1849,14 @@
     <Content Include="Views\DocumentManagement\TrashHRM.cshtml" />
     <Content Include="Views\DocumentManagement\TrashCRM.cshtml" />
     <Content Include="Views\DocumentManagement\_LayoutDocument.cshtml" />
+    <Content Include="Views\Home\_LayoutCRM.cshtml" />
+    <EntityDeploy Include="TelnetModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TelnetModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="TelnetModel.edmx.diagram">
+      <DependentUpon>TelnetModel.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

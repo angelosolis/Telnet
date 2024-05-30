@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewBag.Title = "Announcements";
+    Layout = "~/Views/HRM/_LayoutHRM.cshtml";
+}
+
+<h2>Announcements</h2>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        td, th {
+            text-align: center;
+        }
+
+        .performanceReportTable th:nth-child(n+3),
+        .performanceReportTable td:nth-child(n+3) {
+            padding: 5px; /* Adjust the padding value as needed */
+        }
+    </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <a href="@Url.Action("Onboarding","HRM")" class="card text-bg-info text-white w-100 card-hover">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti ti-user display-6"></i>
+                                    <div class="ms-auto">
+                                        <i class="ti ti-arrow-right fs-8"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4 class="card-title mb-1 text-white">Employees</h4>
+                                    <p class="card-text fw-normal text-white opacity-75">
+                                        25
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <a href="@Url.Action("Department","HRM")" class="card text-bg-info text-white w-100 card-hover">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti ti-home-up display-6"></i>
+                                    <div class="ms-auto">
+                                        <i class="ti ti-arrow-right fs-8"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4 class="card-title mb-1 text-white">Departments</h4>
+                                    <p class="card-text fw-normal text-white opacity-75">
+                                        5
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <a href="@Url.Action("Designation","HRM")" class="card text-bg-info text-white w-100 card-hover">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti ti-home-exclamation display-6"></i>
+                                    <div class="ms-auto">
+                                        <i class="ti ti-arrow-right fs-8"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4 class="card-title mb-1 text-white">Designations</h4>
+                                    <p class="card-text fw-normal text-white opacity-75">
+                                        8
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+
+               
+
+
+                <!-- Add Announcement Modal -->
+                <div class="modal fade" id="addAnnouncementModal" tabindex="-1" role="dialog" aria-labelledby="addAnnouncementModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addAnnouncementModalLabel">Add New Announcement</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="announcementForm">
+                                    <div class="form-group">
+                                        <label for="announcementTitle">Title</label>
+                                        <input type="text" class="form-control" id="announcementTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="announcementDescription">Description</label>
+                                        <textarea class="form-control" id="announcementDescription" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Add Announcement Button -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAnnouncementModal" style="float: right">
+                        Add Announcement
+                    </button>
+
+                    <!-- Latest Announcements -->
+                    <h3>Latest Announcements</h3>
+                    <div class="list-group" id="announcementList">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">New Employee Orientation</h5>
+                                <small>2024-05-15</small>
+                            </div>
+                            <p class="mb-1">All new employees are required to attend the orientation session on May 15th.</p>
+                        </a>
+
+                        <!-- Fake Announcement 2 -->
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Company Picnic</h5>
+                                <small>2024-06-01</small>
+                            </div>
+                            <p class="mb-1">Join us for a company picnic on June 1st at the local park. Don't forget to bring your family!</p>
+                        </a>
+
+                        <!-- Fake Announcement 3 -->
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Upcoming System Maintenance</h5>
+                                <small>2024-05-20</small>
+                            </div>
+                            <p class="mb-1">There will be a scheduled system maintenance on May 20th. Please plan accordingly.</p>
+                        </a>
+                        <!-- Announcements will be dynamically added here -->
+                    </div>
+                </div>
+
+                <div class="modal fade" id="addAnnouncementModal" tabindex="-1" role="dialog" aria-labelledby="addAnnouncementModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addAnnouncementModalLabel">Add New Announcement</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="announcementForm">
+                                    <div class="form-group">
+                                        <label for="announcementTitle">Title</label>
+                                        <input type="text" class="form-control" id="announcementTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="announcementDescription">Description</label>
+                                        <textarea class="form-control" id="announcementDescription" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+    <script>
+        // Function to handle form submission
+        document.getElementById("announcementForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            var title = document.getElementById("announcementTitle").value;
+            var description = document.getElementById("announcementDescription").value;
+
+            // Create new announcement element
+            var announcementElement = document.createElement("a");
+            announcementElement.classList.add("list-group-item", "list-group-item-action");
+            announcementElement.setAttribute("href", "#");
+            announcementElement.innerHTML = `
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">${title}</h5>
+                    <small>${new Date().toISOString().split('T')[0]}</small>
+                </div>
+                <p class="mb-1">${description}</p>`;
+
+            // Append new announcement to the announcements list
+            document.getElementById("announcementList").appendChild(announcementElement);
+
+            // Close the modal
+            $("#addAnnouncementModal").modal("hide");
+
+            // Clear form fields
+            document.getElementById("announcementTitle").value = "";
+            document.getElementById("announcementDescription").value = "";
+        });
+    </script>

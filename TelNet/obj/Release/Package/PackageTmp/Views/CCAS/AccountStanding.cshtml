@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "AccountStanding";
+    Layout = "~/Views/CCAS/_LayoutCCAS.cshtml";
+}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        .btn {
+            margin-bottom: 5px;
+        }
+
+        .dt-length {
+            display: none;
+        }
+
+        table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > th.dt-ordering-asc, table.dataTable thead > tr > th.dt-ordering-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc, table.dataTable thead > tr > td.dt-ordering-asc, table.dataTable thead > tr > td.dt-ordering-desc {
+            position: relative;
+            padding-right:0px!important;
+            text-align: center;
+        }
+
+        table.dataTable > tbody > tr > th, table.dataTable > tbody > tr > td {
+            padding: 8px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Account Standing Overview</h4>
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Services</th>
+                            <th>Account Name</th>
+                            <th>Phone No.</th>
+                            <th>Due Date</th>
+                            <th>Billing Status</th>
+                            <th>Remarks</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>ACC @item.applicationId</td>
+                                <td>@item.serviceAvailed</td>
+                                <td>@item.userApplications.fullName</td>
+                                <td>@item.telephoneNumber</td>
+                                <td>2024-05-20</td>
+                                <td>@(item.status == 1 ? "Paid" : "Pending")</td>
+                                <td>@(item.status == 1 ? "-" : "Overdue")</td>
+                                <td>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#emailModal">Email</button>
+                                    <button class="btn btn-primary" onclick="markAsPaid('@item.id')">Mark as Paid</button>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let table = new DataTable('#myTable');
+
+    function markAsPaid(invoiceId) {
+        // Send AJAX request to update status
+        $.ajax({
+            url: '/CCAS/UpdateStatus',
+            type: 'POST',
+            data: { id: invoiceId, status: 1 },
+            success: function (response) {
+                // Show success message
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Invoice successfully marked as Paid!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            },
+            error: function (xhr, status, error) {
+                // Handle error
+                console.error(xhr.responseText);
+                // Show error message
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'An error occurred while processing your request.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    }
+
+
+
+</script>
+

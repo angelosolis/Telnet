@@ -176,5 +176,61 @@
       <End Role="userCredentials" EntitySet="userCredentials" />
       <End Role="userRoles" EntitySet="userRoles" />
     </AssociationSet>
+    <EntitySet Name="Files" EntityType="TelnetDBModel.File" />
+    <EntitySet Name="Folders" EntityType="TelnetDBModel.Folder" />
+    <AssociationSet Name="FK_File_Folder" Association="TelnetDBModel.FK_File_Folder">
+      <End Role="Folder" EntitySet="Folders" />
+      <End Role="File" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Folder_ParentFolder" Association="TelnetDBModel.FK_Folder_ParentFolder">
+      <End Role="Folder" EntitySet="Folders" />
+      <End Role="Folder1" EntitySet="Folders" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FolderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Folder" Relationship="TelnetDBModel.FK_File_Folder" FromRole="File" ToRole="Folder" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Folder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ParentFolderId" Type="Int32" />
+    <NavigationProperty Name="Files" Relationship="TelnetDBModel.FK_File_Folder" FromRole="Folder" ToRole="File" />
+    <NavigationProperty Name="Folders1" Relationship="TelnetDBModel.FK_Folder_ParentFolder" FromRole="Folder" ToRole="Folder1" />
+    <NavigationProperty Name="Folder1" Relationship="TelnetDBModel.FK_Folder_ParentFolder" FromRole="Folder1" ToRole="Folder" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_File_Folder">
+    <End Type="TelnetDBModel.Folder" Role="Folder" Multiplicity="1" />
+    <End Type="TelnetDBModel.File" Role="File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="File">
+        <PropertyRef Name="FolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folder_ParentFolder">
+    <End Type="TelnetDBModel.Folder" Role="Folder" Multiplicity="0..1" />
+    <End Type="TelnetDBModel.Folder" Role="Folder1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Folder1">
+        <PropertyRef Name="ParentFolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

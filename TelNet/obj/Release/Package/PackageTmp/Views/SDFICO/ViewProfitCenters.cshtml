@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "ProfitCenterAccounting";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Profit Center Accounting Section -->
+                <div id="profitCenterAccounting">
+                    <h3>Profit Center Accounting</h3>
+                    <!-- View Profit Centers -->
+                    <div class="card mb-3">
+                        <div class="card-header">View Profit Centers</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Profit Center ID</th>
+                                        <th>Description</th>
+                                        <th>Total Revenue</th>
+                                        <th>Total Expenses</th>
+                                        <th>Net Profit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Fake data for profit centers -->
+                                    <tr>
+                                        <td>PC-001</td>
+                                        <td>Main Office</td>
+                                        <td>₱500,000</td>
+                                        <td>₱300,000</td>
+                                        <td>₱200,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PC-002</td>
+                                        <td>Branch Office 1</td>
+                                        <td>₱300,000</td>
+                                        <td>₱200,000</td>
+                                        <td>₱100,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PC-003</td>
+                                        <td>Branch Office 2</td>
+                                        <td>₱400,000</td>
+                                        <td>₱250,000</td>
+                                        <td>₱150,000</td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Filter Profit Centers -->
+                    <div class="card mb-3">
+                        <div class="card-header">Filter Profit Centers</div>
+                        <div class="card-body">
+                            <!-- Date Range Filter -->
+                            <div class="form-group">
+                                <label for="dateRange">Date Range:</label>
+                                <input type="date" id="startDate" name="startDate"> <!-- Start Date -->
+                                <span class="mx-2">to</span>
+                                <input type="date" id="endDate" name="endDate"> <!-- End Date -->
+                            </div>
+                            <!-- Region/Department Filter -->
+                            <div class="form-group">
+                                <label for="regionDepartment">Region/Department:</label>
+                                <select id="regionDepartment" name="regionDepartment" class="form-control">
+                                    <option value="all">All</option>
+                                    <option value="mainOffice">Main Office</option>
+                                    <option value="branch1">Branch Office 1</option>
+                                    <option value="branch2">Branch Office 2</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Export Profit Centers -->
+                    <div class="card mb-3">
+                        <div class="card-header">Export Profit Centers</div>
+                        <div class="card-body">
+                            <button class="btn btn-primary" onclick="exportToCSV()">Export to CSV</button>
+                            <button class="btn btn-primary" onclick="exportToPDF()">Export to PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+    // Function to export table data to CSV
+    function exportToCSV() {
+        // Get the table element
+        var table = document.querySelector('#profitCenterAccounting table');
+
+        // Initialize empty CSV string
+        var csv = '';
+
+        // Loop through rows
+        for (var i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+
+            // Loop through cells in the row
+            for (var j = 0; j < row.cells.length; j++) {
+                // Add cell value to CSV string
+                csv += row.cells[j].innerText.trim() + ',';
+            }
+
+            // Add new line character after each row
+            csv += '\n';
+        }
+
+        // Initiate download
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var link = document.createElement('a');
+        if (link.download !== undefined) { // feature detection
+            var url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'profit_centers.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+
+    // Function to export table data to PDF
+    function exportToPDF() {
+        // Initialize jsPDF
+        const doc = new jsPDF();
+
+        // Add table data to PDF
+        doc.autoTable({
+            html: '#profitCenterAccounting table'
+        });
+
+        // Save PDF
+        doc.save('profit_centers.pdf');
+    }
+</script>

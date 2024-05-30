@@ -14,21 +14,22 @@ using System.Web.Security;
 namespace TelNet.Controllers
 {
     [OutputCache(NoStore = true, Duration = 0)]
+    [AllowAnonymous]
     public class LoginController : BaseController
     {
-        [AllowAnonymous] 
+    
         public ActionResult Login()
         {
             return View();
         }
 
-        [AllowAnonymous]
+     
         public ActionResult CreateApplication()
         {
             return View();
         }
 
-        [AllowAnonymous]
+    
         [HttpPost]
         public ActionResult Login(userCredentials u)
         {

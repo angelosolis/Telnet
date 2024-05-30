@@ -12,6 +12,24 @@
     <Property Name="serviceAvailed" Type="nvarchar" MaxLength="50" />
     <Property Name="status" Type="int" />
   </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FolderId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Folders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ParentFolderId" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="notificationLogs">
     <Key>
       <PropertyRef Name="logId" />
@@ -118,6 +136,30 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_File_Folder">
+    <End Role="Folders" Type="Self.Folders" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="FolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folder_ParentFolder">
+    <End Role="Folders" Type="Self.Folders" Multiplicity="0..1" />
+    <End Role="Folders1" Type="Self.Folders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Folders1">
+        <PropertyRef Name="ParentFolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_userRoles_roles">
     <End Role="roles" Type="Self.roles" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -148,6 +190,8 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
   </Association>
   <EntityContainer Name="TelnetDBModelStoreContainer">
     <EntitySet Name="customerAccounts" EntityType="Self.customerAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Folders" EntityType="Self.Folders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="notificationLogs" EntityType="Self.notificationLogs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="userApplications" EntityType="Self.userApplications" Schema="dbo" store:Type="Tables" />
@@ -167,6 +211,14 @@ warning 6002: The table/view 'TelnetDB.dbo.vw_UserRole' does not have a primary 
     <AssociationSet Name="FK_customerAccounts_customerAccounts" Association="Self.FK_customerAccounts_customerAccounts">
       <End Role="userApplications" EntitySet="userApplications" />
       <End Role="customerAccounts" EntitySet="customerAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_File_Folder" Association="Self.FK_File_Folder">
+      <End Role="Folders" EntitySet="Folders" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Folder_ParentFolder" Association="Self.FK_Folder_ParentFolder">
+      <End Role="Folders" EntitySet="Folders" />
+      <End Role="Folders1" EntitySet="Folders" />
     </AssociationSet>
     <AssociationSet Name="FK_userRoles_roles" Association="Self.FK_userRoles_roles">
       <End Role="roles" EntitySet="roles" />

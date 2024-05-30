@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "ProductCostAccounting";
+    Layout = "~/Views/SDFICO/_LayoutSDFICO.cshtml";
+}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Product Cost Accounting Section -->
+                <div id="productCostAccounting">
+                    <h3>Product Cost Accounting</h3>
+                    <!-- View Product Costs -->
+                    <div class="card mb-3">
+                        <div class="card-header">View Product Costs</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product ID</th>
+                                        <th>Description</th>
+                                        <th>Total Cost</th>
+                                        <th>Cost Breakdown</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Real data for product costs -->
+                                    <tr>
+                                        <td>001</td>
+                                        <td>FiberX 100mbps Plan</td>
+                                        <td>₱10,000</td>
+                                        <td>Raw materials: ₱5,000, Labor: ₱3,000, Overhead: ₱2,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>002</td>
+                                        <td>FiberX 200mbps Plan</td>
+                                        <td>₱8,000</td>
+                                        <td>Raw materials: ₱4,000, Labor: ₱2,500, Overhead: ₱1,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>Network Configuration Service</td>
+                                        <td>₱12,000</td>
+                                        <td>Raw materials: ₱6,000, Labor: ₱3,500, Overhead: ₱2,500</td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Filter Product Costs -->
+                    <div class="card mb-3">
+                        <div class="card-header">Filter Product Costs</div>
+                        <div class="card-body">
+                            <!-- Date Range Filter -->
+                            <div class="form-group">
+                                <label for="dateRange">Date Range:</label>
+                                <input type="date" id="startDate" name="startDate"> <!-- Start Date -->
+                                <span class="mx-2">to</span>
+                                <input type="date" id="endDate" name="endDate"> <!-- End Date -->
+                            </div>
+                            <!-- Product Type Filter -->
+                            <div class="form-group">
+                                <label for="productType">Product Type:</label>
+                                <select id="productType" name="productType" class="form-control">
+                                    <option value="all">All</option>
+                                    <option value="service1">FiberX 100mbps Plan</option>
+                                    <option value="service2">FiberX 200mbps Plan</option>
+                                    <option value="product1">Network Configuration Service</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Export Product Costs -->
+                    <div class="card mb-3">
+                        <div class="card-header">Export Product Costs</div>
+                        <div class="card-body">
+                            <button class="btn btn-primary" onclick="exportToCSV()">Export to CSV</button>
+                            <button class="btn btn-primary" onclick="exportToPDF()">Export to PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+    // Function to export table data to CSV
+    function exportToCSV() {
+        // Get the table element
+        var table = document.querySelector('#productCostAccounting table');
+
+        // Initialize empty CSV string
+        var csv = '';
+
+        // Loop through rows
+        for (var i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+
+            // Loop through cells in the row
+            for (var j = 0; j < row.cells.length; j++) {
+                // Add cell value to CSV string
+                csv += row.cells[j].innerText.trim() + ',';
+            }
+
+            // Add new line character after each row
+            csv += '\n';
+        }
+
+        // Initiate download
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var link = document.createElement('a');
+        if (link.download !== undefined) { // feature detection
+            var url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'product_costs.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+
+    // Function to export table data to PDF
+    function exportToPDF() {
+        // Initialize jsPDF
+        const doc = new jsPDF();
+
+        // Add table data to PDF
+        doc.autoTable({
+            html: '#productCostAccounting table'
+        });
+
+        // Save PDF
+        doc.save('product_costs.pdf');
+    }
+</script>

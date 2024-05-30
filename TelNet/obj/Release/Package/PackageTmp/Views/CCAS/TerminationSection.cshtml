@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "TerminationSection";
+    Layout = "~/Views/CCAS/_LayoutCCAS.cshtml";
+}
+
+<h2>TerminationSection</h2>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+    <style>
+        .btn {
+            margin-bottom: 5px;
+        }
+
+        .dt-length {
+            display: none;
+        }
+
+        table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > th.dt-ordering-asc, table.dataTable thead > tr > th.dt-ordering-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc, table.dataTable thead > tr > td.dt-ordering-asc, table.dataTable thead > tr > td.dt-ordering-desc {
+            position: relative;
+            padding-right: 0px !important;
+            text-align: center;
+        }
+
+        table.dataTable > tbody > tr > th, table.dataTable > tbody > tr > td {
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+   
+#clock {max-width: 100%;}
+
+
+    </style>
+</head>
+<div class="body-wrapper-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Termination Section Overview</h4> 
+                
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Subscribed Plan</th>
+                            <th>Account Name</th>
+                            <th>Phone No.</th>
+                            <th>Due Date</th>
+                            <th>Service Status</th>
+                            <th>Termination Fee Settlement Status</th>
+                            <th>Dunning Notice Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1234567</td>
+                            <td>FiberX Plan 800mbps</td>
+                            <td>Larayos, Princess Ann S.</td>
+                            <td>2541882</td>
+                            <td>08/05/2024</td>
+                            <td>Inactive</td>
+                            <td>Paid</td>
+                            <td>
+                                Emailed
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1234567</td>
+                            <td>FiberX Plan 800mbps</td>
+                            <td>Larayos, Princess Ann S.</td>
+                            <td>2544562</td>
+                            <td>08/05/2024</td>
+                            <td>Active</td>
+                            <td>Pending</td>
+                            <td>
+                                Emailed
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1234567</td>
+                            <td>FiberX Plan 800mbps</td>
+                            <td>Larayos, Princess Ann S.</td>
+                            <td>2548782</td>
+                            <td>08/05/2024</td>
+                            <td>Active</td>
+                            <td>Pending</td>
+                            <td>
+                                Emailed
+                            </td>
+                        </tr>
+                        
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let table = new DataTable('#myTable');
+
+    function markAsPaid(invoiceId) {
+        // Send AJAX request to update status
+        $.ajax({
+            url: '/CCAS/UpdateStatus',
+            type: 'POST',
+            data: { id: invoiceId, status: 1 },
+            success: function (response) {
+                // Show success message
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Invoice successfully marked as Paid!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            },
+            error: function (xhr, status, error) {
+                // Handle error
+                console.error(xhr.responseText);
+                // Show error message
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'An error occurred while processing your request.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    }
+
+    
+
+</script>
